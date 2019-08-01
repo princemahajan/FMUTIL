@@ -1,2 +1,3 @@
 # FMUTIL
-Modern Fortran modules for various utility functions
+
+Fortran Miscellaneous UTILities
