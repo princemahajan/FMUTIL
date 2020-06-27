@@ -111,7 +111,7 @@
 !!
 !! \section     Installation
 !!              FMUTIL is tested with Intel Fortran Compiler and MinGW-W64 gfortran. Doxyfile is 
-!!              provided for generating extensive API documentation using Doxygen. FLINT has no
+!!              provided for generating extensive API documentation using Doxygen. FMUTIL has no
 !!              dependency on any other library. The CMakeLists file is provided along with 
 !!              additional CMake modules for compiler options and a Find module for finding and
 !!              linking Intel MKL is also provided. These files can be used to auto generate 
