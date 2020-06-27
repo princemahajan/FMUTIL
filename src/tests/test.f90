@@ -1,6 +1,9 @@
 !##############################################################################
-!
-! FMUTIL: Fortran Miscellaneous UTILities
+!     ________  _____  ______________ 
+!    / ____/  |/  / / / /_  __/  _/ / 
+!   / /_  / /|_/ / / / / / /  / // /  
+!  / __/ / /  / / /_/ / / / _/ // /___
+! /_/   /_/  /_/\____/ /_/ /___/_____/                                     
 !
 ! Copyright 2020 Bharat Mahajan
 !
@@ -17,7 +20,7 @@
 ! limitations under the License.
 !
 !> \brief       TestFMUtil Main Program
-!! \details     Main program to run multiple test cases for FLINT.
+!! \details     Main program to run multiple test cases for FMUTIL
 !! \author      Bharat Mahajan
 !! \date        Created: 01/25/2019     
 !
@@ -34,6 +37,7 @@
     implicit none
     
     ! Simulation Parameters
+    integer, parameter :: VecOps = 10000
 
     complex(WP), dimension(:), allocatable :: coeffs, roots
     integer :: error, ctr, status, itr
@@ -41,32 +45,28 @@
     
     real(WP) :: StartTime, EndTime
     
-    integer, parameter :: VecOps = 7
-    
     type(Vector) :: rvec, rvec1
     type(relem) :: rd1, rd2
     class(VecElem), dimension(:), allocatable :: vecarr
-    type(ielem) :: id1
-    class(VecElem), allocatable :: id2
-    
     
     type(List) :: list1, list2
-    class(*), allocatable :: item1, item2
-    class(*), pointer :: pitem
+    class(*), allocatable :: item1
+    
     
     
     ! Polynomial Roots Test
+
     coeffs = [complex(WP):: 1e-200_WP, (0,-1e200_WP), 1, 100]
     
     BalanceOn = .True.
     
-    call PolyRoots(coeffs, roots, error, BalanceOn = BalanceOn)
+     call PolyRoots(coeffs, roots, error, BalanceOn = BalanceOn)
     
-    print *, roots
+     print *, roots
     
-    print *, 'Roots accuracy: ', &
-            sum(reshape([(coeffs(ctr)*(roots**(ubound(coeffs,1)-ctr)), &
-                        ctr=1,ubound(coeffs,1))],[ubound(roots,1),ubound(coeffs,1)]),2)
+     print *, 'Roots accuracy: ', &
+             sum(reshape([(coeffs(ctr)*(roots**(ubound(coeffs,1)-ctr)), &
+                         ctr=1,ubound(coeffs,1))],[ubound(roots,1),ubound(coeffs,1)]),2)
     
     
     ! Vector Tests
@@ -76,6 +76,7 @@
     call rvec%Init(1, 5, rd1)
     print '(1A60,3I6)', 'Vector init: capacity, size, Used Buckets: ', rvec%Capacity(), rvec%Size(), rvec%NUsedBkts()    
     call rvec%Init(1, 5, rd1)
+    
     ! Vector reserve and shrink
     rd1%rdata = 1.01
     call rvec%Reserve(49)    
@@ -105,7 +106,7 @@
     
     ! Vector slicing
     call CPU_TIME(StartTime)
-    do ctr = 1, 100000
+    do ctr = 1, VecOps
     vecarr = rvec%Slice(1,6,1)
     end do
     call CPU_TIME(EndTime)
@@ -119,7 +120,7 @@
     print *, 'Slice time: ', (EndTime-StartTime)
     
     call CPU_TIME(StartTime)
-    do ctr = 1, 100000
+    do ctr = 1, VecOps
     itr = 6
     vecarr = rvec%BktSlice(1,itr)
     end do
@@ -135,7 +136,6 @@
     
     ! Vector Assigment test
     call rvec1%Init(3, 2, rd1)
-    ! Vector reserve and shrink
     rd1%rdata = 1.01
     ctr = rvec1%PushBack(rd1)    
     print *, 'before assignment'
@@ -143,7 +143,6 @@
         rd2 = rvec1%ElemAt(ctr)
         print *, 'int(', ctr, ')=', rd2%rdata        
     end do    
-    ! assignment
     rvec1 = rvec
     print *, 'after assignment'
     do ctr = 1, rvec1%Size()
@@ -161,6 +160,7 @@
     
     
     ! List Data struture test
+
     ctr = list1%PushBack(1.8)
     ctr = list1%PushBack(4)
     ctr = list1%PushBack(rd1)

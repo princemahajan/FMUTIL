@@ -1,13 +1,31 @@
+###############################################################################
 #     ________  _____  ______________ 
 #    / ____/  |/  / / / /_  __/  _/ / 
 #   / /_  / /|_/ / / / / / /  / // /  
 #  / __/ / /  / / /_/ / / / _/ // /___
 # /_/   /_/  /_/\____/ /_/ /___/_____/                                                                             
+#
+# Copyright 2020 Bharat Mahajan
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# CMake module for finding Intel Math Kernel Library
+# Author: Bharat Mahajan
+#
+###############################################################################
 
-# Module for finding Intel Math Kernel Library
-# Author: Bharat Mahajan (bharat.mahajan@nasa.gov)
 
-# No support for x86 architecture
+# Note: Tested for Intel64 on Windows so far!
 
 # First find the Intel MKL root directory by reading the environment variable
 # This requires the environment variable "MKLROOT" set with the path to the 
@@ -29,10 +47,10 @@ if(NOT INTELROOT)
     message(FATAL_ERROR "Intel Fortran compiler not found" )    
 endif()
 
-# Set the following FALSE for dynamic linking of Intel MKL
-if(POINCARE_BUILD_SHAREDLIB)
+# Set the FMUTIL_SHARED_INTELMKL as TRUE for dynamic linking of Intel MKL
+if(FMUTIL_SHARED_INTELMKL)
     set(MKL_USE_STATIC_LIBS FALSE)
-    message(STATUS "POINCARE: Linking Intel MKL as a shared library")    
+    message(STATUS "FMUTIL: Linking Intel MKL as a shared library")    
 else()
     set(MKL_USE_STATIC_LIBS TRUE)
 endif()    

@@ -1,6 +1,9 @@
 !##############################################################################
-!
-! FMUTIL: Fortran Miscellaneous UTILities
+!     ________  _____  ______________ 
+!    / ____/  |/  / / / /_  __/  _/ / 
+!   / /_  / /|_/ / / / / / /  / // /  
+!  / __/ / /  / / /_/ / / / _/ // /___
+! /_/   /_/  /_/\____/ /_/ /___/_____/                                     
 !
 ! Copyright 2020 Bharat Mahajan
 !
@@ -17,9 +20,9 @@
 ! limitations under the License.
 !
 !> \brief       Vector module
-!! \details     This module provides the vector data structure (similar to 
-!!              C++ Vector) represented internally using an array of buckets,
-!!              which is again an array.
+!! \details     This module provides the Vector data structure (similar to 
+!!              C++ STL Vector) represented internally using an array of 
+!!              buckets, which is again an array.
 !! \author      Bharat Mahajan
 !! \date        Created: 05/27/2020    
 !
