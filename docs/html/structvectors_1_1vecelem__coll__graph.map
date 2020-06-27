@@ -1,0 +1,3 @@
+<map id="vectors::vecelem" name="vectors::vecelem">
+<area shape="rect" id="node1" title="Abstract vector element type that must be extended by user to define the type for the Vector elements..." alt="" coords="5,5,132,97"/>
+</map>

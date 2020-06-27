@@ -8,7 +8,7 @@
 !> \mainpage    FMUTIL: Fortran Miscellaneous UTILities
 !! \details     A Fortran library for miscellaneous utilities such as data structures
 !!              (List, Vector), root-finding for polynomials and nonlinear equations, etc.
-!! \author      Bharat Mahajan
+!! \author      Bharat Mahajan (https://www.researchgate.net/profile/Bharat_Mahajan2)
 !! \version     0.1
 !! \date        Created: 02/12/2020    
 !! \copyright   Copyright 2020 Bharat Mahajan  
