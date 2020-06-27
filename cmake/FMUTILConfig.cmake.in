@@ -1,0 +1,28 @@
+#     ________  _____  ______________ 
+#    / ____/  |/  / / / /_  __/  _/ / 
+#   / /_  / /|_/ / / / / / /  / // /  
+#  / __/ / /  / / /_/ / / / _/ // /___
+# /_/   /_/  /_/\____/ /_/ /___/_____/                                                                             
+                                                        
+
+# Author: Bharat Mahajan
+
+# - Config file for the FMUTIL package
+
+# It defines the following variables
+#  FMUTIL_LIBRARIES    - libraries to link against
+#  FMUTIL_EXECUTABLE   - the test executable
+
+get_filename_component(FMUTIL_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+# FMUTIL CMAKE config and target files are in binary dir
+@PACKAGE_INIT@
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET FMUTIL AND NOT FMUTIL_BINARY_DIR)
+  include("${FMUTIL_CMAKE_DIR}/FMUTILTargets.cmake")
+endif()
+
+# These are IMPORTED targets created by FMUTILTargets.cmake
+set(FMUTIL_LIBRARIES FMUTIL)
+set(FMUTIL_EXECUTABLE TestFMUTIL)
