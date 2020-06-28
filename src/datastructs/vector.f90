@@ -339,7 +339,7 @@ module Vectors
         ! deallocate if used bkts are less than allocated bkts
         if (me%UsedBkts < me%AllocatedBkts) then
             do ctr = me%Size()+1, me%AllocatedBkts
-                deallocate(me%VecData(ctr)%pBkt)
+                if (associated(me%VecData(ctr)%pBkt)) deallocate(me%VecData(ctr)%pBkt)
                 me%VecData(ctr)%pBkt => null()
             end do
             me%AllocatedBkts = me%UsedBkts
@@ -917,7 +917,7 @@ module Vectors
         
         ! free up memory held up by all the buckets
         do ctr = 1, size(me%VecData)
-            deallocate(me%VecData(ctr)%pBkt)
+            if (associated(me%VecData(ctr)%pBkt)) deallocate(me%VecData(ctr)%pBkt)
             me%VecData(ctr)%pBkt => null()
         end do
     end subroutine Destroy

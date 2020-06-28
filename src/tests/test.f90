@@ -75,7 +75,6 @@
     print '(1A60,3I6)', 'Vector: capacity, size, Used Buckets: ', rvec%Capacity(), rvec%Size(), rvec%NUsedBkts()
     call rvec%Init(1, 5, rd1)
     print '(1A60,3I6)', 'Vector init: capacity, size, Used Buckets: ', rvec%Capacity(), rvec%Size(), rvec%NUsedBkts()    
-    call rvec%Init(1, 5, rd1)
     
     ! Vector reserve and shrink
     rd1%rdata = 1.01

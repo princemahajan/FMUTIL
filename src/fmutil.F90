@@ -12,15 +12,18 @@
 !! \version     0.1
 !! \date        Created: 02/12/2020    
 !! \copyright   Copyright 2020 Bharat Mahajan  
+!! \subsubsection     Repository
+!!              https://github.com/princemahajan/FMUTIL
 !! \section     sec Introduction 
 !!              FMUTil is a modern object-oriented Fortran library that provides (as of now):
-!!              - Two data structures
-!!                  + Vector, similar to C++ STL Vectors
-!!                  + List, similar to Python List
-!!              - Root-finding algorithm for polynomials by solving associated eigenvalue
-!!                problem
-!!              - Root-finding of a nonlinear equation using Brent's algorithm
-!!              - A binary search method for sorted arrays
+!!              - Data structures
+!!                  + Vector (similar to C++ STL Vectors) with fast vector slicing
+!!                  + List (similar to Python List)
+!!              - Root-finding algorithms
+!!                  +  Polynomial roots by computing eigenvalues of 
+!!                      the companion matirx (require Intel MKL)
+!!                  + Roots of a nonlinear equation using Brent's algorithm
+!!              - A simple binary search method for sorted arrays
 !!
 !! \section     usagesec How to Use
 !!              + For Vector data structure of any type, define the type of the Vector 
@@ -111,19 +114,29 @@
 !!
 !! \section     Installation
 !!              FMUTIL is tested with Intel Fortran Compiler and MinGW-W64 gfortran. Doxyfile is 
-!!              provided for generating extensive API documentation using Doxygen. FMUTIL has no
-!!              dependency on any other library. The CMakeLists file is provided along with 
-!!              additional CMake modules for compiler options and a Find module for finding and
-!!              linking Intel MKL is also provided. These files can be used to auto generate 
+!!              provided for generating extensive API documentation using Doxygen. FMUTIL has only 
+!!              dependency on Intel MKL for polynomial root-finding. The CMakeLists file is provided 
+!!              along with additional CMake modules for compiler options and a Find module for finding 
+!!              and linking Intel MKL is also provided. These files can be used to auto generate 
 !!              Visual Studio projects or makefiles on Windows and Linux using CMake. 
 !!              A find module for FMUTIL is provided that generates CMake config files for 
 !!              easily linking FMUTIL using the find_package() command. The steps to link FMUTIL 
 !!              in cmake-based projects are:
 !!
+!!              + Set the environment variable "MKLROOT" with the path to the Intel MKL installation 
+!!              directory. On typical Windows system, it looks something like
+!!              "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.0.117\windows\mkl"
+!!
+!!              + Set the environment variable "IFORT_COMPILER20" with the path to the Fortran Compiler
+!!              installation directory. On typical Windows system, it looks something like 
+!!              "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2020\windows\"
+!!
 !!              + In cmake GUI or command-line, set FMUTIL_INSTALL_LIB_DIR to the desired directory, 
 !!                      where the compiled library, modules, and cmake config files will be installed.
+!!
 !!              + In cmake GUI or command-line, set FMUTIL_INSTALL_BIN_DIR to the desired directory, 
 !!                      where the compiled test executables will be installed.
+!!
 !!              + In your project CMakeLists.txt, insert
 !!
 !!              \code
