@@ -1,8 +1,10 @@
 var vector_8f90 =
 [
     [ "vecelem", "structvectors_1_1vecelem.html", "structvectors_1_1vecelem" ],
-    [ "assign_vecelem", "interfacevectors_1_1assign__vecelem.html", null ],
+    [ "assign_vecelem", "interfacevectors_1_1assign__vecelem.html", "interfacevectors_1_1assign__vecelem" ],
     [ "invalidvecelem", "structvectors_1_1invalidvecelem.html", "structvectors_1_1invalidvecelem" ],
+    [ "bkt", "structvectors_1_1bkt.html", "structvectors_1_1bkt" ],
+    [ "bktptr", "structvectors_1_1bktptr.html", "structvectors_1_1bktptr" ],
     [ "vector", "structvectors_1_1vector.html", "structvectors_1_1vector" ],
     [ "add_bktelem", "vector_8f90.html#a89bf63adb3e205d764ac5bf595991f2c", null ],
     [ "assign_invalidelem", "vector_8f90.html#aed306fb8067ed5e59fc81f1002b07cf2", null ],

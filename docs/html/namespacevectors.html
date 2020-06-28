@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('namespacevectors.html',''); initResiza
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Types</a> &#124;
-<a href="#func-members">Functions/Subroutines</a>  </div>
+<a href="#func-members">Functions/Subroutines</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">vectors Module Reference</div>  </div>
 </div><!--header-->
@@ -98,6 +99,12 @@ $(document).ready(function(){initNavTree('namespacevectors.html',''); initResiza
 Data Types</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacevectors_1_1assign__vecelem.html">assign_vecelem</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface for the procedure invoked during assignment of VecElem.  <a href="interfacevectors_1_1assign__vecelem.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1bkt.html">bkt</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal Bucket sturcture. Each bucket can contain a number of elements.  <a href="structvectors_1_1bkt.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1bktptr.html">bktptr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a single bucket.  <a href="structvectors_1_1bktptr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1invalidvecelem.html">invalidvecelem</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Vector element type that is returned in case of an exception.  <a href="structvectors_1_1invalidvecelem.html#details">More...</a><br /></td></tr>
@@ -114,6 +121,91 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a7438b19e1493cb69cb69819dcb930e31"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a7438b19e1493cb69cb69819dcb930e31">initialize</a> (me, NewBktsToAllocate, BktCap, MoldElem)</td></tr>
 <tr class="memdesc:a7438b19e1493cb69cb69819dcb930e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional procedure to initialize Vector type and allocate internal storage. It can be used to modify the default settings for storage allocation. If Init is not called first, Vector is initialized using the default settings and storage is allocated on the first call to push data in the Vector. This procedure will only change the number of new buckets to create on Vector capacity increase if it is invoked after the first call to push data in the Vector.  <a href="namespacevectors.html#a7438b19e1493cb69cb69819dcb930e31">More...</a><br /></td></tr>
 <tr class="separator:a7438b19e1493cb69cb69819dcb930e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b69963c01388034c0d6d2710048eb7"><td class="memItemLeft" align="right" valign="top">pure integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a95b69963c01388034c0d6d2710048eb7">vec_size</a> (me)</td></tr>
+<tr class="memdesc:a95b69963c01388034c0d6d2710048eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of allocated elements in the Vector.  <a href="namespacevectors.html#a95b69963c01388034c0d6d2710048eb7">More...</a><br /></td></tr>
+<tr class="separator:a95b69963c01388034c0d6d2710048eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add8d4b964dfd5b56178de695f00c27d3"><td class="memItemLeft" align="right" valign="top">pure integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#add8d4b964dfd5b56178de695f00c27d3">capacity</a> (me)</td></tr>
+<tr class="memdesc:add8d4b964dfd5b56178de695f00c27d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of elements that can be saved in the Vector without any need for increasing the memory footprint.  <a href="namespacevectors.html#add8d4b964dfd5b56178de695f00c27d3">More...</a><br /></td></tr>
+<tr class="separator:add8d4b964dfd5b56178de695f00c27d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af621bfa3e38326b583030b8d9d610d02"><td class="memItemLeft" align="right" valign="top">pure integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#af621bfa3e38326b583030b8d9d610d02">nusedbkts</a> (me)</td></tr>
+<tr class="memdesc:af621bfa3e38326b583030b8d9d610d02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of internal data buckets allocated by the Vector. Each bucket can contain multiple elements defined by its capacity.  <a href="namespacevectors.html#af621bfa3e38326b583030b8d9d610d02">More...</a><br /></td></tr>
+<tr class="separator:af621bfa3e38326b583030b8d9d610d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a440c03b699700fa6892527027ed34a6c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a440c03b699700fa6892527027ed34a6c">reserve</a> (me, n)</td></tr>
+<tr class="memdesc:a440c03b699700fa6892527027ed34a6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases the capcity of Vector to 'n' if the current capacity is smaller than 'n'.  <a href="namespacevectors.html#a440c03b699700fa6892527027ed34a6c">More...</a><br /></td></tr>
+<tr class="separator:a440c03b699700fa6892527027ed34a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8d13d234acb569b989136238d09709"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#aee8d13d234acb569b989136238d09709">shrinktofit</a> (me)</td></tr>
+<tr class="memdesc:aee8d13d234acb569b989136238d09709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deallocate unused buckets to make Capacity as close to Size as possible.  <a href="namespacevectors.html#aee8d13d234acb569b989136238d09709">More...</a><br /></td></tr>
+<tr class="separator:aee8d13d234acb569b989136238d09709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc95be2c3ab9efdd8d93e6bd4958888"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a9bc95be2c3ab9efdd8d93e6bd4958888">elem_at</a> (me, Index)</td></tr>
+<tr class="memdesc:a9bc95be2c3ab9efdd8d93e6bd4958888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the element with the requested index (1-based) Pointer will not be associated in case of an exception.  <a href="namespacevectors.html#a9bc95be2c3ab9efdd8d93e6bd4958888">More...</a><br /></td></tr>
+<tr class="separator:a9bc95be2c3ab9efdd8d93e6bd4958888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03dc18f69fc6dae9e9d5f4228d679854"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a03dc18f69fc6dae9e9d5f4228d679854">elem_front</a> (me)</td></tr>
+<tr class="memdesc:a03dc18f69fc6dae9e9d5f4228d679854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element with the index=1.  <a href="namespacevectors.html#a03dc18f69fc6dae9e9d5f4228d679854">More...</a><br /></td></tr>
+<tr class="separator:a03dc18f69fc6dae9e9d5f4228d679854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a2a21ea6c129bb880786a536251fed"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a33a2a21ea6c129bb880786a536251fed">elem_back</a> (me)</td></tr>
+<tr class="memdesc:a33a2a21ea6c129bb880786a536251fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last element in the Vector.  <a href="namespacevectors.html#a33a2a21ea6c129bb880786a536251fed">More...</a><br /></td></tr>
+<tr class="separator:a33a2a21ea6c129bb880786a536251fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a074370b3a7f3a40803c3dfe3a672dae1"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a074370b3a7f3a40803c3dfe3a672dae1">vec_slice</a> (me, lower, upper, stride)</td></tr>
+<tr class="memdesc:a074370b3a7f3a40803c3dfe3a672dae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element array within the requested lower and upper bounds. This is inefficient as it copies the requested slice of the Vector in an array and returns it. If bounds result in zero-length slice, an empty array of VecElem type is returned.  <a href="namespacevectors.html#a074370b3a7f3a40803c3dfe3a672dae1">More...</a><br /></td></tr>
+<tr class="separator:a074370b3a7f3a40803c3dfe3a672dae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe3b436e831c969202bf26ba52b0cdc"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, dimension(:), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a4fe3b436e831c969202bf26ba52b0cdc">bkt_slice</a> (me, lower, upper)</td></tr>
+<tr class="memdesc:a4fe3b436e831c969202bf26ba52b0cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the Vector slice specified using the user-specified lower and upper bounds. If the requested slice is beyond the extent of the data bucket that contains the element corresponding to the lower bound, then the data array is truncated at the bucket boundary and the upper bound is updated to indicate the actual upper bound of data that can be referenced using the returned pointer. This is an efficient method as no copying of data is done. In case of an exception, the returned pointer will not be associated.  <a href="namespacevectors.html#a4fe3b436e831c969202bf26ba52b0cdc">More...</a><br /></td></tr>
+<tr class="separator:a4fe3b436e831c969202bf26ba52b0cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705372dafdb5ffef4cd6fd155040395a"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a705372dafdb5ffef4cd6fd155040395a">push_back</a> (me, velem)</td></tr>
+<tr class="memdesc:a705372dafdb5ffef4cd6fd155040395a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to add an element at the back of the vector.  <a href="namespacevectors.html#a705372dafdb5ffef4cd6fd155040395a">More...</a><br /></td></tr>
+<tr class="separator:a705372dafdb5ffef4cd6fd155040395a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6211481c8fda24856e1af95aa81de8b3"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a6211481c8fda24856e1af95aa81de8b3">pop_back</a> (me)</td></tr>
+<tr class="memdesc:a6211481c8fda24856e1af95aa81de8b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to extract the last element of the vector.  <a href="namespacevectors.html#a6211481c8fda24856e1af95aa81de8b3">More...</a><br /></td></tr>
+<tr class="separator:a6211481c8fda24856e1af95aa81de8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac317befa97e00d4f87629c8769bc78cb"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#ac317befa97e00d4f87629c8769bc78cb">elem_insert</a> (me, pos, NewElems, count)</td></tr>
+<tr class="memdesc:ac317befa97e00d4f87629c8769bc78cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the element/elements at the given index and relocate existing elements at the later indices. Very inefficient way to add elements to Vector unless elements are inserted after the last element.  <a href="namespacevectors.html#ac317befa97e00d4f87629c8769bc78cb">More...</a><br /></td></tr>
+<tr class="separator:ac317befa97e00d4f87629c8769bc78cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647d85c3fb44dea7205e37dba9182353"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a647d85c3fb44dea7205e37dba9182353">elem_erase</a> (me, lower, upper)</td></tr>
+<tr class="memdesc:a647d85c3fb44dea7205e37dba9182353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the element/elements between and including lower and upper bounds. The elements are moved to fill up empty locations. Very inefficient way to delete elements from Vector.  <a href="namespacevectors.html#a647d85c3fb44dea7205e37dba9182353">More...</a><br /></td></tr>
+<tr class="separator:a647d85c3fb44dea7205e37dba9182353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a34e03736a450a5996e46d9a138a6b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#ad2a34e03736a450a5996e46d9a138a6b">clear</a> (me)</td></tr>
+<tr class="memdesc:ad2a34e03736a450a5996e46d9a138a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the contents of Vector but the bucket memory is not deallocated.  <a href="namespacevectors.html#ad2a34e03736a450a5996e46d9a138a6b">More...</a><br /></td></tr>
+<tr class="separator:ad2a34e03736a450a5996e46d9a138a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9adcd5d0c508abb87770c05e3299c25"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#ab9adcd5d0c508abb87770c05e3299c25">create_newbkts</a> (me, NumBkts)</td></tr>
+<tr class="memdesc:ab9adcd5d0c508abb87770c05e3299c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subroutine to allocate storage for a new bucket.  <a href="namespacevectors.html#ab9adcd5d0c508abb87770c05e3299c25">More...</a><br /></td></tr>
+<tr class="separator:ab9adcd5d0c508abb87770c05e3299c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a885a6d3f53d7b17b10ad6915f7bb2f"><td class="memItemLeft" align="right" valign="top">pure subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a5a885a6d3f53d7b17b10ad6915f7bb2f">index2bkt</a> (me, Index, Bkt, BktOffset)</td></tr>
+<tr class="memdesc:a5a885a6d3f53d7b17b10ad6915f7bb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts Vector index to bucket number and offset into the bucket.  <a href="namespacevectors.html#a5a885a6d3f53d7b17b10ad6915f7bb2f">More...</a><br /></td></tr>
+<tr class="separator:a5a885a6d3f53d7b17b10ad6915f7bb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed306fb8067ed5e59fc81f1002b07cf2"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#aed306fb8067ed5e59fc81f1002b07cf2">assign_invalidelem</a> (lhs, rhs)</td></tr>
+<tr class="separator:aed306fb8067ed5e59fc81f1002b07cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba2272a5bc90d10009f206e6b1217d5"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a6ba2272a5bc90d10009f206e6b1217d5">assignvector</a> (lhs, rhs)</td></tr>
+<tr class="memdesc:a6ba2272a5bc90d10009f206e6b1217d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subroutine for Vector assignment operator.  <a href="namespacevectors.html#a6ba2272a5bc90d10009f206e6b1217d5">More...</a><br /></td></tr>
+<tr class="separator:a6ba2272a5bc90d10009f206e6b1217d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1354fdeb47e244feaa681dbb1d1b3e84"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a1354fdeb47e244feaa681dbb1d1b3e84">destroy</a> (me)</td></tr>
+<tr class="memdesc:a1354fdeb47e244feaa681dbb1d1b3e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="namespacevectors.html#a1354fdeb47e244feaa681dbb1d1b3e84">More...</a><br /></td></tr>
+<tr class="separator:a1354fdeb47e244feaa681dbb1d1b3e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f04219d9268c94e35602e8e826a7284"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a9f04219d9268c94e35602e8e826a7284">bktinit</a> (me, status, cap, mold_elem)</td></tr>
+<tr class="memdesc:a9f04219d9268c94e35602e8e826a7284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bucket Type Methods.  <a href="namespacevectors.html#a9f04219d9268c94e35602e8e826a7284">More...</a><br /></td></tr>
+<tr class="separator:a9f04219d9268c94e35602e8e826a7284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89bf63adb3e205d764ac5bf595991f2c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a89bf63adb3e205d764ac5bf595991f2c">add_bktelem</a> (me, offset, elem)</td></tr>
+<tr class="separator:a89bf63adb3e205d764ac5bf595991f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab505322fae3083b103cbb8603f2a6d05"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#ab505322fae3083b103cbb8603f2a6d05">del_bktelem</a> (me, offset)</td></tr>
+<tr class="separator:ab505322fae3083b103cbb8603f2a6d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e8f857497488e4acad2ef3010bf527"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a23e8f857497488e4acad2ef3010bf527">bktclear</a> (me)</td></tr>
+<tr class="separator:a23e8f857497488e4acad2ef3010bf527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fe4cc2bb652a4b6c1e71bd53b3e67e"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#aa3fe4cc2bb652a4b6c1e71bd53b3e67e">bktelem</a> (me, offset)</td></tr>
+<tr class="separator:aa3fe4cc2bb652a4b6c1e71bd53b3e67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6abce66aa2d3735a7d2ae2901448d04e"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, dimension(:), pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a6abce66aa2d3735a7d2ae2901448d04e">bktsliceptr</a> (me, start_ind, end_ind)</td></tr>
+<tr class="separator:a6abce66aa2d3735a7d2ae2901448d04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4c2bd3c62b151233e85b0db756d502"><td class="memItemLeft" align="right" valign="top">pure logical function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a0f4c2bd3c62b151233e85b0db756d502">is_bktempty</a> (me)</td></tr>
+<tr class="separator:a0f4c2bd3c62b151233e85b0db756d502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b464661df7d9bad364076668106238d"><td class="memItemLeft" align="right" valign="top">pure integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a2b464661df7d9bad364076668106238d">bktsz</a> (me)</td></tr>
+<tr class="separator:a2b464661df7d9bad364076668106238d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad3778afc6b5d095b281a380ed87d8145"><td class="memItemLeft" align="right" valign="top">integer, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#ad3778afc6b5d095b281a380ed87d8145">default_bktcap</a> = 3</td></tr>
+<tr class="memdesc:ad3778afc6b5d095b281a380ed87d8145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default capacity of internal buckets.  <a href="namespacevectors.html#ad3778afc6b5d095b281a380ed87d8145">More...</a><br /></td></tr>
+<tr class="separator:ad3778afc6b5d095b281a380ed87d8145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a38b775fc0d45577b014d1a504ccdf"><td class="memItemLeft" align="right" valign="top">integer, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacevectors.html#a28a38b775fc0d45577b014d1a504ccdf">default_newbktsallocated</a> = 2</td></tr>
+<tr class="memdesc:a28a38b775fc0d45577b014d1a504ccdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of buckets to create on vector capacity increase.  <a href="namespacevectors.html#a28a38b775fc0d45577b014d1a504ccdf">More...</a><br /></td></tr>
+<tr class="separator:a28a38b775fc0d45577b014d1a504ccdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Vector module. </p>
@@ -121,6 +213,850 @@ Functions/Subroutines</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>Created: 05/27/2020 <br  />
  </dd></dl>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
+<a id="a89bf63adb3e205d764ac5bf595991f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bf63adb3e205d764ac5bf595991f2c">&#9670;&nbsp;</a></span>add_bktelem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::add_bktelem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>elem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00942">942</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="aed306fb8067ed5e59fc81f1002b07cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed306fb8067ed5e59fc81f1002b07cf2">&#9670;&nbsp;</a></span>assign_invalidelem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::assign_invalidelem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1invalidvecelem.html">invalidvecelem</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00874">874</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a6ba2272a5bc90d10009f206e6b1217d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba2272a5bc90d10009f206e6b1217d5">&#9670;&nbsp;</a></span>assignvector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::assignvector </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subroutine for Vector assignment operator. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00882">882</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vector_8f90_source.html#l00149">vectors::vector::assignment()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacevectors_a6ba2272a5bc90d10009f206e6b1217d5_icgraph.png" border="0" usemap="#namespacevectors_a6ba2272a5bc90d10009f206e6b1217d5_icgraph" alt=""/></div>
+<map name="namespacevectors_a6ba2272a5bc90d10009f206e6b1217d5_icgraph" id="namespacevectors_a6ba2272a5bc90d10009f206e6b1217d5_icgraph">
+<area shape="rect" title="Subroutine for Vector assignment operator." alt="" coords="233,5,376,32"/>
+<area shape="rect" href="structvectors_1_1vector.html#a2fd6ce685e36748e35c9e22bab4230e4" title="Assignment operator for the Vector type, this enables copying of RHS vector contents to LHS vector...." alt="" coords="5,5,185,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4fe3b436e831c969202bf26ba52b0cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe3b436e831c969202bf26ba52b0cdc">&#9670;&nbsp;</a></span>bkt_slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, dimension(:), pointer vectors::bkt_slice </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(inout)&#160;</td>
+          <td class="paramname"><em>upper</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to the Vector slice specified using the user-specified lower and upper bounds. If the requested slice is beyond the extent of the data bucket that contains the element corresponding to the lower bound, then the data array is truncated at the bucket boundary and the upper bound is updated to indicate the actual upper bound of data that can be referenced using the returned pointer. This is an efficient method as no copying of data is done. In case of an exception, the returned pointer will not be associated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lower</td><td>Lower bound as m in MATLAB-like syntax Vector(m:n) </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">upper</td><td>Upper bound as n in MATLAB-like syntax Vector(m:n)<ul>
+<li>Can be a negative integer as '-|a|' where |a| &lt; Vector size</li>
+<li>It is updated to return the index of the last element that can be referenced using the returned pointer if the Vector slice is not entirely contained in a single bucket. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array of VecElem type containing the subsection of Vector </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00482">482</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a23e8f857497488e4acad2ef3010bf527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e8f857497488e4acad2ef3010bf527">&#9670;&nbsp;</a></span>bktclear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::bktclear </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00963">963</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="aa3fe4cc2bb652a4b6c1e71bd53b3e67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fe4cc2bb652a4b6c1e71bd53b3e67e">&#9670;&nbsp;</a></span>bktelem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, pointer vectors::bktelem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(in), target&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00972">972</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a9f04219d9268c94e35602e8e826a7284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f04219d9268c94e35602e8e826a7284">&#9670;&nbsp;</a></span>bktinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::bktinit </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(out)&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>cap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>mold_elem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bucket Type Methods. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00928">928</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a6abce66aa2d3735a7d2ae2901448d04e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6abce66aa2d3735a7d2ae2901448d04e">&#9670;&nbsp;</a></span>bktsliceptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, dimension(:), pointer vectors::bktsliceptr </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(in), target&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>start_ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>end_ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00987">987</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a2b464661df7d9bad364076668106238d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b464661df7d9bad364076668106238d">&#9670;&nbsp;</a></span>bktsz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure integer function vectors::bktsz </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l01018">1018</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="add8d4b964dfd5b56178de695f00c27d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add8d4b964dfd5b56178de695f00c27d3">&#9670;&nbsp;</a></span>capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure integer function vectors::capacity </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the total number of elements that can be saved in the Vector without any need for increasing the memory footprint. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00285">285</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="ad2a34e03736a450a5996e46d9a138a6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2a34e03736a450a5996e46d9a138a6b">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::clear </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear the contents of Vector but the bucket memory is not deallocated. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00793">793</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="ab9adcd5d0c508abb87770c05e3299c25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9adcd5d0c508abb87770c05e3299c25">&#9670;&nbsp;</a></span>create_newbkts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::create_newbkts </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>NumBkts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subroutine to allocate storage for a new bucket. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00810">810</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="ab505322fae3083b103cbb8603f2a6d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab505322fae3083b103cbb8603f2a6d05">&#9670;&nbsp;</a></span>del_bktelem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::del_bktelem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00954">954</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a1354fdeb47e244feaa681dbb1d1b3e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1354fdeb47e244feaa681dbb1d1b3e84">&#9670;&nbsp;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::destroy </td>
+          <td>(</td>
+          <td class="paramtype">type(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00912">912</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="vector_8f90_source.html#l00214">vectors::vector::destroy()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacevectors_a1354fdeb47e244feaa681dbb1d1b3e84_icgraph.png" border="0" usemap="#namespacevectors_a1354fdeb47e244feaa681dbb1d1b3e84_icgraph" alt=""/></div>
+<map name="namespacevectors_a1354fdeb47e244feaa681dbb1d1b3e84_icgraph" id="namespacevectors_a1354fdeb47e244feaa681dbb1d1b3e84_icgraph">
+<area shape="rect" title="Destructor." alt="" coords="209,5,324,32"/>
+<area shape="rect" href="structvectors_1_1vector.html#aefdc62dc275fa1ba50a43e1a774eb62f" title="Frees up all the memory allocated." alt="" coords="5,5,161,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9bc95be2c3ab9efdd8d93e6bd4958888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc95be2c3ab9efdd8d93e6bd4958888">&#9670;&nbsp;</a></span>elem_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, pointer vectors::elem_at </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>Index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to the element with the requested index (1-based) Pointer will not be associated in case of an exception. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the requested element </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the requested element </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00366">366</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a33a2a21ea6c129bb880786a536251fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a2a21ea6c129bb880786a536251fed">&#9670;&nbsp;</a></span>elem_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, allocatable vectors::elem_back </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last element in the Vector. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00401">401</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a647d85c3fb44dea7205e37dba9182353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a647d85c3fb44dea7205e37dba9182353">&#9670;&nbsp;</a></span>elem_erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::elem_erase </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in), optional&#160;</td>
+          <td class="paramname"><em>upper</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delete the element/elements between and including lower and upper bounds. The elements are moved to fill up empty locations. Very inefficient way to delete elements from Vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lower</td><td>Lower bound </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">upper</td><td>Upper bound. All the elements witin lower and upper bounds are deleted. If upper is omitted only a single element with index=lower is deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00716">716</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a03dc18f69fc6dae9e9d5f4228d679854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03dc18f69fc6dae9e9d5f4228d679854">&#9670;&nbsp;</a></span>elem_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, allocatable vectors::elem_front </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the element with the index=1. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00390">390</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="ac317befa97e00d4f87629c8769bc78cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac317befa97e00d4f87629c8769bc78cb">&#9670;&nbsp;</a></span>elem_insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::elem_insert </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>), dimension(:), intent(in)&#160;</td>
+          <td class="paramname"><em>NewElems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in), optional&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts the element/elements at the given index and relocate existing elements at the later indices. Very inefficient way to add elements to Vector unless elements are inserted after the last element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>Position at which the new elements are inserted (1-based index) Must be &gt;= 1 and &lt;= vector size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">newelems</td><td>Array of New Elements to be inserted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>If provided, NewElems are repeated count times before inserted Total number of elements inserted=count*size(NewElems) Default value is 1. Must be &gt;= 1 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00605">605</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a5a885a6d3f53d7b17b10ad6915f7bb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a885a6d3f53d7b17b10ad6915f7bb2f">&#9670;&nbsp;</a></span>index2bkt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure subroutine vectors::index2bkt </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>Index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(out)&#160;</td>
+          <td class="paramname"><em>Bkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(out)&#160;</td>
+          <td class="paramname"><em>BktOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts Vector index to bucket number and offset into the bucket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Given index </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bkt</td><td>Bucket number </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bktoffset</td><td>Offset into a bucket </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00853">853</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
 <a id="a7438b19e1493cb69cb69819dcb930e31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7438b19e1493cb69cb69819dcb930e31">&#9670;&nbsp;</a></span>initialize()</h2>
 
@@ -173,13 +1109,374 @@ Functions/Subroutines</h2></td></tr>
 
 </div>
 </div>
+<a id="a0f4c2bd3c62b151233e85b0db756d502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4c2bd3c62b151233e85b0db756d502">&#9670;&nbsp;</a></span>is_bktempty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure logical function vectors::is_bktempty </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1bkt.html">bkt</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l01007">1007</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="af621bfa3e38326b583030b8d9d610d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af621bfa3e38326b583030b8d9d610d02">&#9670;&nbsp;</a></span>nusedbkts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure integer function vectors::nusedbkts </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the total number of internal data buckets allocated by the Vector. Each bucket can contain multiple elements defined by its capacity. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00297">297</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a6211481c8fda24856e1af95aa81de8b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6211481c8fda24856e1af95aa81de8b3">&#9670;&nbsp;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, allocatable vectors::pop_back </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to extract the last element of the vector. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00577">577</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a705372dafdb5ffef4cd6fd155040395a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705372dafdb5ffef4cd6fd155040395a">&#9670;&nbsp;</a></span>push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer function vectors::push_back </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>velem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to add an element at the back of the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">velem</td><td>Element to add to the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on error, otherwise returns the position of the element </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00533">533</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a440c03b699700fa6892527027ed34a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a440c03b699700fa6892527027ed34a6c">&#9670;&nbsp;</a></span>reserve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::reserve </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Increases the capcity of Vector to 'n' if the current capacity is smaller than 'n'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Reserve space of the minimum 'n' elements </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00309">309</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="aee8d13d234acb569b989136238d09709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8d13d234acb569b989136238d09709">&#9670;&nbsp;</a></span>shrinktofit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine vectors::shrinktofit </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deallocate unused buckets to make Capacity as close to Size as possible. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00332">332</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a95b69963c01388034c0d6d2710048eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b69963c01388034c0d6d2710048eb7">&#9670;&nbsp;</a></span>vec_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure integer function vectors::vec_size </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the total number of allocated elements in the Vector. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00267">267</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a074370b3a7f3a40803c3dfe3a672dae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a074370b3a7f3a40803c3dfe3a672dae1">&#9670;&nbsp;</a></span>vec_slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>) function, dimension(:), allocatable vectors::vec_slice </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structvectors_1_1vector.html">vector</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>lower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>upper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in), optional&#160;</td>
+          <td class="paramname"><em>stride</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the element array within the requested lower and upper bounds. This is inefficient as it copies the requested slice of the Vector in an array and returns it. If bounds result in zero-length slice, an empty array of VecElem type is returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lower</td><td>Lower bound as m in MATLAB-like syntax Vector(m:n) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">upper</td><td>Upper bound as n in MATLAB-like syntax Vector(m:n)<ul>
+<li>Can be a negative integer as '-|a|' where |a| &lt; Vector size </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stride</td><td>stride as in MATLAB-like syntax Vector(m:stride:n)<ul>
+<li>Default is 1 </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array of VecElem type containing the subsection of Vector </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00419">419</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad3778afc6b5d095b281a380ed87d8145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3778afc6b5d095b281a380ed87d8145">&#9670;&nbsp;</a></span>default_bktcap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, parameter vectors::default_bktcap = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default capacity of internal buckets. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00041">41</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
+<a id="a28a38b775fc0d45577b014d1a504ccdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28a38b775fc0d45577b014d1a504ccdf">&#9670;&nbsp;</a></span>default_newbktsallocated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, parameter vectors::default_newbktsallocated = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default number of buckets to create on vector capacity increase. </p>
+
+<p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00044">44</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacevectors.html">vectors</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

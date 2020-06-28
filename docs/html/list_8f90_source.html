@@ -107,12 +107,7 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">! WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">! See the License for the specific language governing permissions and</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">! limitations under the License.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">!</span><span class="comment"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">!&gt; \brief       List module</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">!! \details     This module provides the list data structure (similar to </span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">!!              Python list) represented internally using an array.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">!! \author      Bharat Mahajan</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">!! \date        Created: 05/27/2020    </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">!</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">!##############################################################################</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -124,60 +119,43 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">private</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">    !&gt; Default number of slots to create on list capacity increase</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: DEFAULT_NEWSLOTSALLOCATED = 5</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    !&gt; List Item type</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;     <span class="keyword">type</span>, <span class="keyword">private</span> :: listitem</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">private</span><span class="comment"></span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">        !&gt; Must be .TRUE. if data item exists</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">logical</span> :: Valid = .false.<span class="comment"></span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">        !&gt; Pointer to the data item</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">class</span>(*), <span class="keywordtype">pointer</span> :: item</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="namespacelists.html#acd71057d69aae0af45bbd9b1313aebd0">   40</a></span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">parameter</span> :: <a class="code" href="namespacelists.html#acd71057d69aae0af45bbd9b1313aebd0">default_newslotsallocated</a> = 5</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structlists_1_1listitem.html">   43</a></span>&#160;     <span class="keyword">type</span>, <span class="keyword">private</span> :: <a class="code" href="structlists_1_1listitem.html">listitem</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">private</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structlists_1_1listitem.html#ab25c8cb209a230f7277ba1cfd066cac8">   46</a></span>&#160;        <span class="keywordtype">logical</span> :: valid = .false.</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structlists_1_1listitem.html#ad72f8d0514f7ab9cb3527b71a411926e">   48</a></span>&#160;        <span class="keywordtype">class</span>(*), <span class="keywordtype">pointer</span> :: item</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">contains</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">private</span><span class="comment"></span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">        !&gt; Copy the given data in item</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">procedure</span> :: add_listitem<span class="comment"></span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">        !&gt; Deallocate the item</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">procedure</span> :: del_listitem<span class="comment"></span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">        !&gt; Check for valid item</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">procedure</span> :: isvalid_listitem</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;     <span class="keyword">end type </span>listitem</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">private</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structlists_1_1listitem.html#a90327ad49978cf74eab82755789d61a2">   52</a></span>&#160;        <span class="keywordtype">procedure</span> :: <a class="code" href="namespacelists.html#a9440843aea42e81dc51478583921bca9">add_listitem</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structlists_1_1listitem.html#a59f8b84b851407a73eff962af8539ec2">   54</a></span>&#160;        <span class="keywordtype">procedure</span> :: <a class="code" href="namespacelists.html#a21d289096305310be0219ca73394248f">del_listitem</a></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structlists_1_1listitem.html#ae10a7fd4c94592dd222b94606b055c29">   56</a></span>&#160;        <span class="keywordtype">procedure</span> :: <a class="code" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">isvalid_listitem</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;     <span class="keyword">end type </span><a class="code" href="structlists_1_1listitem.html">listitem</a></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    !&gt; List type</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structlists_1_1list.html">   62</a></span>&#160;    <span class="keyword">type</span>, <span class="keyword">public</span> :: <a class="code" href="structlists_1_1list.html">list</a></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">private</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        !&gt; Status: 0-success, any negative value indicates exception condition</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        </div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a391d4365d625b70e742f43135adf7085">   67</a></span>&#160;        <span class="keywordtype">integer</span>, <span class="keywordtype">public</span> :: status = 0</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">        !&gt; Number of slots that currently contain data</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a5727c762e9c9c2b24717d40d19d2a893">   70</a></span>&#160;        <span class="keywordtype">integer</span> :: usedslots = 0</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">        !&gt; Number of slots that are currently allocated</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a05c17bfd6a31556c3683bf225a069ce9">   73</a></span>&#160;        <span class="keywordtype">integer</span> :: allocatedslots = 0</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">        !&gt; Number of new slots to create on List capacity increase</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a7f55b0680aaa7c41c8b55d84174d6f90">   76</a></span>&#160;        <span class="keywordtype">integer</span> :: newslotstoallocate = default_newslotsallocated</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">        !&gt; Array of List items</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a446433855545de74fa9a675af2b1d203">   79</a></span>&#160;        <span class="keywordtype">type</span>(listitem), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: listdata</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a7f55b0680aaa7c41c8b55d84174d6f90">   76</a></span>&#160;        <span class="keywordtype">integer</span> :: newslotstoallocate = <a class="code" href="namespacelists.html#acd71057d69aae0af45bbd9b1313aebd0">default_newslotsallocated</a></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a446433855545de74fa9a675af2b1d203">   79</a></span>&#160;        <span class="keywordtype">type</span>(<a class="code" href="structlists_1_1listitem.html">listitem</a>), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: listdata</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">contains</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">private</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a39a81ff8ab0849899271231d9729b791">   85</a></span>&#160;        <span class="keywordtype">procedure</span> :: assignlist</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">        !&gt; Assignment operator for the List type, this enables</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">        !! copying of RHS List items to LHS List. Note that</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">        !! after this operation, LHS List will be an exact copy</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">        !! of the RHS List including data and internal state.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ac9bb3920835eb554124e6d7c3b0dafa0">   91</a></span>&#160;        generic, <span class="keywordtype">public</span> :: <span class="keyword">assignment</span>(=) =&gt; assignlist</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a39a81ff8ab0849899271231d9729b791">   85</a></span>&#160;        <span class="keywordtype">procedure</span> :: <a class="code" href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">assignlist</a></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ac9bb3920835eb554124e6d7c3b0dafa0">   91</a></span>&#160;        generic, <span class="keywordtype">public</span> :: <span class="keyword">assignment</span>(=) =&gt; <a class="code" href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">assignlist</a></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">! procedure :: ConcatList</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
@@ -187,42 +165,29 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">! generic, public :: assignment(//) =&gt; ConcatList</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">! Internal procedures</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a35623093d4de2dd35bec5f1aed5a9f2a">  101</a></span>&#160;        <span class="keywordtype">procedure</span> :: create_newslots        </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">        !&gt; Returns size of the List or number of items stored</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a35623093d4de2dd35bec5f1aed5a9f2a">  101</a></span>&#160;        <span class="keywordtype">procedure</span> :: <a class="code" href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">create_newslots</a>        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        </div>
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#aaaa7b69b3bc53df86e49d2f9e48172c0">  104</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: size =&gt; <a class="code" href="namespacelists.html#af9b06edaffbd77255284bec313bfbb75">list_size</a></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">        !&gt; Push one item at the back of the List</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ae91b84925041fb79ad4051aebcfd0078">  107</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: pushback =&gt; push_back</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">        !&gt; Pop one item from the back of the List</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a27497b001ba9a3a36d7176c51222679c">  110</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: popback =&gt; pop_back        </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">        !&gt; Returns a pointer to the item with the given index (1-based)</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ab66342df40db566daf7f5b67a6380dd8">  113</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: item =&gt; item_at</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">        !&gt; Returns the item with the index-1</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#af6763f14b17968d265832356ad60f165">  116</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: front =&gt; item_front</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">        !&gt; Returns the item with the last index</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a321b93e8f936492722eae7aed3b72012">  119</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: back =&gt; item_back</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">        !&gt; Inserts the item at the given index and relocate </span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">        !! items at the later indices</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a8e17fdc02878de9b2912c0ccec4f8071">  123</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: insert =&gt; item_insert</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">        !&gt; Delete the item at the given index and relocate </span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">        !! the item at the later indices</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ad6aadf2d46cb082d5a518bc1c0adef5c">  127</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: erase =&gt; item_erase</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">        !&gt; Deallocate unused List slots</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a3f2abc19b084dc4c825f80c260381416">  130</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: shrinktofit</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">        !&gt; Clear the contents of the List but memory is not deallocated</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a11f509376fdeebee3dff08e8a5b03575">  133</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: clear</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">        !&gt; Frees up all the memory allocated</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a9cf30c7b35c6b60f5ef5ebcaa1d5abf1">  136</a></span>&#160;        final :: destroy</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ae91b84925041fb79ad4051aebcfd0078">  107</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: pushback =&gt; <a class="code" href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">push_back</a></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a27497b001ba9a3a36d7176c51222679c">  110</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: popback =&gt; <a class="code" href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">pop_back</a>        </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ab66342df40db566daf7f5b67a6380dd8">  113</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: item =&gt; <a class="code" href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">item_at</a></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#af6763f14b17968d265832356ad60f165">  116</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: front =&gt; <a class="code" href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">item_front</a></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a321b93e8f936492722eae7aed3b72012">  119</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: back =&gt; <a class="code" href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">item_back</a></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a8e17fdc02878de9b2912c0ccec4f8071">  123</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: insert =&gt; <a class="code" href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">item_insert</a></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#ad6aadf2d46cb082d5a518bc1c0adef5c">  127</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: erase =&gt; <a class="code" href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">item_erase</a></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a3f2abc19b084dc4c825f80c260381416">  130</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: <a class="code" href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">shrinktofit</a></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a11f509376fdeebee3dff08e8a5b03575">  133</a></span>&#160;        <span class="keywordtype">procedure</span>, <span class="keywordtype">public</span> :: <a class="code" href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">clear</a></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="structlists_1_1list.html#a9cf30c7b35c6b60f5ef5ebcaa1d5abf1">  136</a></span>&#160;        final :: <a class="code" href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">destroy</a></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">end type </span><a class="code" href="structlists_1_1list.html">list</a></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
@@ -231,8 +196,7 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">!&gt; Returns the total number of items in the List</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="namespacelists.html#af9b06edaffbd77255284bec313bfbb75">  147</a></span>&#160;<span class="keywordtype">pure</span> <span class="keyword">function </span><a class="code" href="namespacelists.html#af9b06edaffbd77255284bec313bfbb75">list_size</a>(me)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(in)</span> :: me</div>
@@ -245,14 +209,11 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">!&gt; Subroutine to append an element at the back of the list</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">function </span>push_back(me, newitem) <span class="keyword">result</span>(Index)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">  161</a></span>&#160;<span class="keyword">function </span><a class="code" href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">push_back</a>(me, newitem) <span class="keyword">result</span>(Index)</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me<span class="comment"></span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">    !&gt; item to add to the list</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">intent(in)</span> :: newitem<span class="comment"></span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">    !&gt; 0 on error, otherwise returns the position of the element</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">intent(in)</span> :: newitem</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">integer</span> :: index</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    index = 0</div>
@@ -267,13 +228,12 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">call </span>me%ListData(me%UsedSlots+1)%add_listitem(newitem)</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    me%UsedSlots = me%UsedSlots + 1</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    index = me%UsedSlots</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">end function </span>push_back</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">end function </span><a class="code" href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">push_back</a></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">!&gt; Function to extract the last item of List</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword">function </span>pop_back(me) <span class="keyword">result</span>(item)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">  187</a></span>&#160;<span class="keyword">function </span><a class="code" href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">pop_back</a>(me) <span class="keyword">result</span>(item)</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">allocatable</span> :: item</div>
@@ -284,15 +244,12 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">! delete this item</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">call </span>me%ListData(me%UsedSlots)%del_listitem()</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    me%UsedSlots = me%UsedSlots - 1</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">end function </span>pop_back</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">end function </span><a class="code" href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">pop_back</a></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">!&gt; Returns a pointer to the item with the requested index (1-based)</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">!! Pointer will not be associated in case of an exception</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keyword">function </span>item_at(me, Index) <span class="keyword">result</span>(item)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">  203</a></span>&#160;<span class="keyword">function </span><a class="code" href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">item_at</a>(me, Index) <span class="keyword">result</span>(item)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span>, <span class="keywordtype">target</span> :: me<span class="comment"></span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">    !&gt; Index of the requested item</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span>, <span class="keywordtype">target</span> :: me</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: index</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">pointer</span> :: item</div>
@@ -302,40 +259,37 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (index &lt; 1 .OR. index &gt; me%Size()) <span class="keywordflow">return</span></div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">! If element is valid, return the pointer</span></div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (me%Listdata(index)%isvalid_listitem()) item=&gt;me%Listdata(index)%item</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">end function </span>item_at</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">end function </span><a class="code" href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">item_at</a></div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">!&gt; Returns the item with the index=1</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">function </span>item_front(me) <span class="keyword">result</span>(item)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">  222</a></span>&#160;<span class="keyword">function </span><a class="code" href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">item_front</a>(me) <span class="keyword">result</span>(item)</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">allocatable</span> :: item</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">pointer</span> :: ptr</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    ptr =&gt; me%Item(1)</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">allocate</span>(item, source=ptr)</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keyword">end function </span>item_front</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keyword">end function </span><a class="code" href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">item_front</a></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">!&gt; Returns the last item in List</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">function </span>item_back(me) <span class="keyword">result</span>(item)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">  234</a></span>&#160;<span class="keyword">function </span><a class="code" href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">item_back</a>(me) <span class="keyword">result</span>(item)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">allocatable</span> :: item</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">pointer</span> :: ptr</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    ptr =&gt; me%Item(me%Size())</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">allocate</span>(item, source=ptr)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">end function </span>item_back</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">end function </span><a class="code" href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">item_back</a></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">!&gt; Inserts an item at the given position</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keyword">subroutine </span>item_insert(me, pos, NewItem)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">  245</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">item_insert</a>(me, pos, NewItem)</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: pos</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">intent(in)</span> :: newitem</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">intent(in)</span> :: NewItem</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">integer</span> :: ctr</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
@@ -360,13 +314,12 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">! insert the new item</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">call </span>me%ListData(pos)%add_listitem(newitem)</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    me%UsedSlots = me%UsedSlots + 1</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">end subroutine </span>item_insert</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">item_insert</a></div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">!&gt; Erase an item at the given position</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">subroutine </span>item_erase(me, pos)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">  280</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">item_erase</a>(me, pos)</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: pos</div>
@@ -387,20 +340,18 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keyword">call </span>me%ListData(ctr)%add_listitem(me%ListData(ctr+1)%item)</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keywordflow">    end do</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    me%UsedSlots = me%UsedSlots - 1</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">end subroutine </span>item_erase</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">item_erase</a></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">!&gt; Subroutine to allocate storage for new slots</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">subroutine </span>create_newslots(me, NumSlots)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">  308</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">create_newslots</a>(me, NumSlots)</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me<span class="comment"></span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="comment">    !&gt; Number of slots to create</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: numslots</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">integer</span>, <span class="keywordtype">intent(in)</span> :: NumSlots</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">type</span>(listitem), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: tmp</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structlists_1_1listitem.html">listitem</a>), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: tmp</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">integer</span> :: ctr</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="comment">! allocate new item array</span></div>
@@ -416,13 +367,12 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keyword">call </span>move_alloc(from=tmp, to=me%ListData)</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        me%AllocatedSlots = me%AllocatedSlots + numslots</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keywordflow">    end if</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">end subroutine </span>create_newslots</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">create_newslots</a></div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment">!&gt; Subroutine for List assignment operator</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">subroutine </span>assignlist(lhs, rhs)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">  336</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">assignlist</a>(lhs, rhs)</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(out)</span> :: lhs</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(in)</span> :: rhs</div>
@@ -444,15 +394,14 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    lhs%NewSlotsToAllocate   = rhs%NewSlotsToAllocate</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    lhs%UsedSlots            = rhs%UsedSlots</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    lhs%AllocatedSlots       = rhs%AllocatedSlots </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">end subroutine </span>assignlist    </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">assignlist</a>    </div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="comment">!&gt; Clear the contents of List</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="keyword">subroutine </span>clear(me)</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">  366</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">clear</a>(me)</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
@@ -463,16 +412,15 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keywordflow">    end do</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="comment">! used slots are 0 now</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    me%UsedSlots = 0</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keyword">end subroutine </span>clear</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">clear</a></div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment">!&gt; Free up unused allocated memory and make List capacity equal to its size</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="keyword">subroutine </span>shrinktofit(me)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">  381</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">shrinktofit</a>(me)</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordtype">integer</span> :: ctr</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">type</span>(listitem), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: tmp</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structlists_1_1listitem.html">listitem</a>), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">allocatable</span> :: tmp</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">if</span> (me%Size() &lt; me%AllocatedSlots) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="comment">! destroy the slots</span></div>
@@ -492,13 +440,12 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keyword">call </span>move_alloc(from=tmp, to=me%ListData)</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="keywordflow">    end if</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="keyword">end subroutine </span>shrinktofit</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">shrinktofit</a></div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="comment">!&gt; Destructor</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keyword">subroutine </span>destroy(me)</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">  412</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">destroy</a>(me)</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">implicit none</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordtype">type</span>(<a class="code" href="structlists_1_1list.html">list</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
@@ -508,16 +455,15 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordflow">do</span> ctr = 1, me%Size()</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keyword">call </span>me%ListData(ctr)%del_listitem()</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="keywordflow">    end do</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="keyword">end subroutine </span>destroy</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">destroy</a></div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="comment">! List Item procedures</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="keywordtype">elemental</span> <span class="keyword">subroutine </span>add_listitem(me, item)</div>
+<div class="line"><a name="l00428"></a><span class="lineno"><a class="line" href="namespacelists.html#a9440843aea42e81dc51478583921bca9">  428</a></span>&#160;<span class="keywordtype">elemental</span> <span class="keyword">subroutine </span><a class="code" href="namespacelists.html#a9440843aea42e81dc51478583921bca9">add_listitem</a>(me, item)</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">class</span>(listitem), <span class="keywordtype">intent(inout)</span> :: me<span class="comment"></span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="comment">    !&gt; new item to be allocated</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1listitem.html">listitem</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">class</span>(*), <span class="keywordtype">intent(in)</span> :: item</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordtype">integer</span> :: status</div>
@@ -530,40 +476,57 @@ $(document).ready(function(){initNavTree('list_8f90_source.html',''); initResiza
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">associated</span>(me%item)) <span class="keyword">deallocate</span>(me%item)</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        me%item =&gt; null()</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keywordflow">    end if</span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keyword">end subroutine </span>add_listitem</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#a9440843aea42e81dc51478583921bca9">add_listitem</a></div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;<span class="keyword">subroutine </span>del_listitem(me)</div>
+<div class="line"><a name="l00448"></a><span class="lineno"><a class="line" href="namespacelists.html#a21d289096305310be0219ca73394248f">  448</a></span>&#160;<span class="keyword">subroutine </span><a class="code" href="namespacelists.html#a21d289096305310be0219ca73394248f">del_listitem</a>(me)</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordtype">class</span>(listitem), <span class="keywordtype">intent(inout)</span> :: me</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1listitem.html">listitem</a>), <span class="keywordtype">intent(inout)</span> :: me</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">associated</span>(me%item)) <span class="keyword">deallocate</span>(me%item)</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    me%item =&gt; null()</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    me%Valid = .false.</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="keyword">end subroutine </span>del_listitem</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="keyword">end subroutine </span><a class="code" href="namespacelists.html#a21d289096305310be0219ca73394248f">del_listitem</a></div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="keywordtype">pure</span> <span class="keywordtype">elemental</span> <span class="keyword">function </span>isvalid_listitem(me)</div>
+<div class="line"><a name="l00459"></a><span class="lineno"><a class="line" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">  459</a></span>&#160;<span class="keywordtype">pure</span> <span class="keywordtype">elemental</span> <span class="keyword">function </span><a class="code" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">isvalid_listitem</a>(me)</div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordtype">class</span>(listitem), <span class="keywordtype">intent(in)</span> :: me</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keywordtype">logical</span> :: isvalid_listitem</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    isvalid_listitem = me%Valid</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="keyword">end function </span>isvalid_listitem</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordtype">class</span>(<a class="code" href="structlists_1_1listitem.html">listitem</a>), <span class="keywordtype">intent(in)</span> :: me</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keywordtype">logical</span> :: <a class="code" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">isvalid_listitem</a></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <a class="code" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">isvalid_listitem</a> = me%Valid</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="keyword">end function </span><a class="code" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">isvalid_listitem</a></div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="keyword">end module </span><a class="code" href="namespacelists.html">lists</a></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacelists_html"><div class="ttname"><a href="namespacelists.html">lists</a></div><div class="ttdoc">List module.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00031">list.f90:31</a></div></div>
+<div class="ttc" id="anamespacelists_html_ae1019ae525fdb74e6e31400aa1e9e56a"><div class="ttname"><a href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">lists::item_insert</a></div><div class="ttdeci">subroutine item_insert(me, pos, NewItem)</div><div class="ttdoc">Inserts an item at the given position.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00245">list.f90:246</a></div></div>
+<div class="ttc" id="anamespacelists_html_a9e6c98490c22e2522fba176105adf48d"><div class="ttname"><a href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">lists::destroy</a></div><div class="ttdeci">subroutine destroy(me)</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00412">list.f90:413</a></div></div>
+<div class="ttc" id="astructlists_1_1listitem_html"><div class="ttname"><a href="structlists_1_1listitem.html">lists::listitem</a></div><div class="ttdoc">List Item type.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00043">list.f90:43</a></div></div>
 <div class="ttc" id="astructlists_1_1list_html"><div class="ttname"><a href="structlists_1_1list.html">lists::list</a></div><div class="ttdoc">List type.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00062">list.f90:62</a></div></div>
+<div class="ttc" id="anamespacelists_html_ada463ea7b5f650ece6dc310a0d47e677"><div class="ttname"><a href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">lists::create_newslots</a></div><div class="ttdeci">subroutine create_newslots(me, NumSlots)</div><div class="ttdoc">Subroutine to allocate storage for new slots.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00308">list.f90:309</a></div></div>
+<div class="ttc" id="anamespacelists_html_a10cda577a2a13e320937d14631bda6ba"><div class="ttname"><a href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">lists::push_back</a></div><div class="ttdeci">integer function push_back(me, newitem)</div><div class="ttdoc">Subroutine to append an element at the back of the list.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00161">list.f90:162</a></div></div>
+<div class="ttc" id="anamespacelists_html_abce3ea21341c156ef884c471eac06fcc"><div class="ttname"><a href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">lists::clear</a></div><div class="ttdeci">subroutine clear(me)</div><div class="ttdoc">Clear the contents of List.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00366">list.f90:367</a></div></div>
+<div class="ttc" id="anamespacelists_html_a97e296497b3c873e0c8090d64c25b8cb"><div class="ttname"><a href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">lists::pop_back</a></div><div class="ttdeci">class(*) function, allocatable pop_back(me)</div><div class="ttdoc">Function to extract the last item of List.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00187">list.f90:188</a></div></div>
 <div class="ttc" id="anamespacelists_html_af9b06edaffbd77255284bec313bfbb75"><div class="ttname"><a href="namespacelists.html#af9b06edaffbd77255284bec313bfbb75">lists::list_size</a></div><div class="ttdeci">pure integer function list_size(me)</div><div class="ttdoc">Returns the total number of items in the List.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00147">list.f90:148</a></div></div>
+<div class="ttc" id="anamespacelists_html_aa7a2bdf5679a8a7dcc5bf306bcd52d1b"><div class="ttname"><a href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">lists::item_back</a></div><div class="ttdeci">class(*) function, allocatable item_back(me)</div><div class="ttdoc">Returns the last item in List.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00234">list.f90:235</a></div></div>
+<div class="ttc" id="anamespacelists_html_a86344f8258fd804593ccf61322b66e5d"><div class="ttname"><a href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">lists::item_erase</a></div><div class="ttdeci">subroutine item_erase(me, pos)</div><div class="ttdoc">Erase an item at the given position.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00280">list.f90:281</a></div></div>
+<div class="ttc" id="anamespacelists_html_acd71057d69aae0af45bbd9b1313aebd0"><div class="ttname"><a href="namespacelists.html#acd71057d69aae0af45bbd9b1313aebd0">lists::default_newslotsallocated</a></div><div class="ttdeci">integer, parameter default_newslotsallocated</div><div class="ttdoc">Default number of slots to create on list capacity increase.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00040">list.f90:40</a></div></div>
+<div class="ttc" id="anamespacelists_html_a19414ccb0a2d148bae4092ba7dce3317"><div class="ttname"><a href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">lists::shrinktofit</a></div><div class="ttdeci">subroutine shrinktofit(me)</div><div class="ttdoc">Free up unused allocated memory and make List capacity equal to its size.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00381">list.f90:382</a></div></div>
+<div class="ttc" id="anamespacelists_html_a9440843aea42e81dc51478583921bca9"><div class="ttname"><a href="namespacelists.html#a9440843aea42e81dc51478583921bca9">lists::add_listitem</a></div><div class="ttdeci">elemental subroutine add_listitem(me, item)</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00428">list.f90:429</a></div></div>
+<div class="ttc" id="anamespacelists_html_a1388480ef6baf454539463810aef2dc6"><div class="ttname"><a href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">lists::assignlist</a></div><div class="ttdeci">subroutine assignlist(lhs, rhs)</div><div class="ttdoc">Subroutine for List assignment operator.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00336">list.f90:337</a></div></div>
+<div class="ttc" id="anamespacelists_html_a1002304d82cdccb25ea74dde7c417369"><div class="ttname"><a href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">lists::item_front</a></div><div class="ttdeci">class(*) function, allocatable item_front(me)</div><div class="ttdoc">Returns the item with the index=1.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00222">list.f90:223</a></div></div>
+<div class="ttc" id="anamespacelists_html_a639e84f87b72b88883273d14f6a50aa4"><div class="ttname"><a href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">lists::item_at</a></div><div class="ttdeci">class(*) function, pointer item_at(me, Index)</div><div class="ttdoc">Returns a pointer to the item with the requested index (1-based) Pointer will not be associated in ca...</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00203">list.f90:204</a></div></div>
 <div class="ttc" id="anamespacefmutilbase_html"><div class="ttname"><a href="namespacefmutilbase.html">fmutilbase</a></div><div class="ttdoc">FMUTIL Base Module.</div><div class="ttdef"><b>Definition:</b> <a href="fmutil__base_8_f90_source.html#l00031">fmutil_base.F90:31</a></div></div>
+<div class="ttc" id="anamespacelists_html_a21d289096305310be0219ca73394248f"><div class="ttname"><a href="namespacelists.html#a21d289096305310be0219ca73394248f">lists::del_listitem</a></div><div class="ttdeci">subroutine del_listitem(me)</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00448">list.f90:449</a></div></div>
+<div class="ttc" id="anamespacelists_html_a72ffef12c9623d0a283f5dabc3f78a79"><div class="ttname"><a href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">lists::isvalid_listitem</a></div><div class="ttdeci">pure elemental logical function isvalid_listitem(me)</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00459">list.f90:460</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6da380b73ec7b023897e158d58c1c995.html">datastructs</a></li><li class="navelem"><a class="el" href="list_8f90.html">list.f90</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

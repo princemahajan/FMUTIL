@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['func_91',['func',['../interfacerootfinding_1_1func.html',1,'rootfinding::func'],['../interfacesearch_1_1func.html',1,'search::func']]]
+  ['bkt_129',['bkt',['../structvectors_1_1bkt.html',1,'vectors']]],
+  ['bktptr_130',['bktptr',['../structvectors_1_1bktptr.html',1,'vectors']]]
 ];

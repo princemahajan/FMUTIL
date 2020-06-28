@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('namespacelists.html',''); initResizabl
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Types</a> &#124;
-<a href="#func-members">Functions/Subroutines</a>  </div>
+<a href="#func-members">Functions/Subroutines</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">lists Module Reference</div>  </div>
 </div><!--header-->
@@ -99,12 +100,63 @@ Data Types</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlists_1_1list.html">list</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List type.  <a href="structlists_1_1list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">type &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlists_1_1listitem.html">listitem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List Item type.  <a href="structlists_1_1listitem.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions/Subroutines</h2></td></tr>
 <tr class="memitem:af9b06edaffbd77255284bec313bfbb75"><td class="memItemLeft" align="right" valign="top">pure integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#af9b06edaffbd77255284bec313bfbb75">list_size</a> (me)</td></tr>
 <tr class="memdesc:af9b06edaffbd77255284bec313bfbb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of items in the List.  <a href="namespacelists.html#af9b06edaffbd77255284bec313bfbb75">More...</a><br /></td></tr>
 <tr class="separator:af9b06edaffbd77255284bec313bfbb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10cda577a2a13e320937d14631bda6ba"><td class="memItemLeft" align="right" valign="top">integer function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">push_back</a> (me, newitem)</td></tr>
+<tr class="memdesc:a10cda577a2a13e320937d14631bda6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subroutine to append an element at the back of the list.  <a href="namespacelists.html#a10cda577a2a13e320937d14631bda6ba">More...</a><br /></td></tr>
+<tr class="separator:a10cda577a2a13e320937d14631bda6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e296497b3c873e0c8090d64c25b8cb"><td class="memItemLeft" align="right" valign="top">class(*) function, allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">pop_back</a> (me)</td></tr>
+<tr class="memdesc:a97e296497b3c873e0c8090d64c25b8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to extract the last item of List.  <a href="namespacelists.html#a97e296497b3c873e0c8090d64c25b8cb">More...</a><br /></td></tr>
+<tr class="separator:a97e296497b3c873e0c8090d64c25b8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639e84f87b72b88883273d14f6a50aa4"><td class="memItemLeft" align="right" valign="top">class(*) function, pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">item_at</a> (me, Index)</td></tr>
+<tr class="memdesc:a639e84f87b72b88883273d14f6a50aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the item with the requested index (1-based) Pointer will not be associated in case of an exception.  <a href="namespacelists.html#a639e84f87b72b88883273d14f6a50aa4">More...</a><br /></td></tr>
+<tr class="separator:a639e84f87b72b88883273d14f6a50aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1002304d82cdccb25ea74dde7c417369"><td class="memItemLeft" align="right" valign="top">class(*) function, allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">item_front</a> (me)</td></tr>
+<tr class="memdesc:a1002304d82cdccb25ea74dde7c417369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the item with the index=1.  <a href="namespacelists.html#a1002304d82cdccb25ea74dde7c417369">More...</a><br /></td></tr>
+<tr class="separator:a1002304d82cdccb25ea74dde7c417369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a2bdf5679a8a7dcc5bf306bcd52d1b"><td class="memItemLeft" align="right" valign="top">class(*) function, allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">item_back</a> (me)</td></tr>
+<tr class="memdesc:aa7a2bdf5679a8a7dcc5bf306bcd52d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last item in List.  <a href="namespacelists.html#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">More...</a><br /></td></tr>
+<tr class="separator:aa7a2bdf5679a8a7dcc5bf306bcd52d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1019ae525fdb74e6e31400aa1e9e56a"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">item_insert</a> (me, pos, NewItem)</td></tr>
+<tr class="memdesc:ae1019ae525fdb74e6e31400aa1e9e56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an item at the given position.  <a href="namespacelists.html#ae1019ae525fdb74e6e31400aa1e9e56a">More...</a><br /></td></tr>
+<tr class="separator:ae1019ae525fdb74e6e31400aa1e9e56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86344f8258fd804593ccf61322b66e5d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">item_erase</a> (me, pos)</td></tr>
+<tr class="memdesc:a86344f8258fd804593ccf61322b66e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase an item at the given position.  <a href="namespacelists.html#a86344f8258fd804593ccf61322b66e5d">More...</a><br /></td></tr>
+<tr class="separator:a86344f8258fd804593ccf61322b66e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada463ea7b5f650ece6dc310a0d47e677"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">create_newslots</a> (me, NumSlots)</td></tr>
+<tr class="memdesc:ada463ea7b5f650ece6dc310a0d47e677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subroutine to allocate storage for new slots.  <a href="namespacelists.html#ada463ea7b5f650ece6dc310a0d47e677">More...</a><br /></td></tr>
+<tr class="separator:ada463ea7b5f650ece6dc310a0d47e677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1388480ef6baf454539463810aef2dc6"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">assignlist</a> (lhs, rhs)</td></tr>
+<tr class="memdesc:a1388480ef6baf454539463810aef2dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subroutine for List assignment operator.  <a href="namespacelists.html#a1388480ef6baf454539463810aef2dc6">More...</a><br /></td></tr>
+<tr class="separator:a1388480ef6baf454539463810aef2dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce3ea21341c156ef884c471eac06fcc"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">clear</a> (me)</td></tr>
+<tr class="memdesc:abce3ea21341c156ef884c471eac06fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the contents of List.  <a href="namespacelists.html#abce3ea21341c156ef884c471eac06fcc">More...</a><br /></td></tr>
+<tr class="separator:abce3ea21341c156ef884c471eac06fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19414ccb0a2d148bae4092ba7dce3317"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">shrinktofit</a> (me)</td></tr>
+<tr class="memdesc:a19414ccb0a2d148bae4092ba7dce3317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free up unused allocated memory and make List capacity equal to its size.  <a href="namespacelists.html#a19414ccb0a2d148bae4092ba7dce3317">More...</a><br /></td></tr>
+<tr class="separator:a19414ccb0a2d148bae4092ba7dce3317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6c98490c22e2522fba176105adf48d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">destroy</a> (me)</td></tr>
+<tr class="memdesc:a9e6c98490c22e2522fba176105adf48d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="namespacelists.html#a9e6c98490c22e2522fba176105adf48d">More...</a><br /></td></tr>
+<tr class="separator:a9e6c98490c22e2522fba176105adf48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9440843aea42e81dc51478583921bca9"><td class="memItemLeft" align="right" valign="top">elemental subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a9440843aea42e81dc51478583921bca9">add_listitem</a> (me, item)</td></tr>
+<tr class="separator:a9440843aea42e81dc51478583921bca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d289096305310be0219ca73394248f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a21d289096305310be0219ca73394248f">del_listitem</a> (me)</td></tr>
+<tr class="separator:a21d289096305310be0219ca73394248f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ffef12c9623d0a283f5dabc3f78a79"><td class="memItemLeft" align="right" valign="top">pure elemental logical function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#a72ffef12c9623d0a283f5dabc3f78a79">isvalid_listitem</a> (me)</td></tr>
+<tr class="separator:a72ffef12c9623d0a283f5dabc3f78a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:acd71057d69aae0af45bbd9b1313aebd0"><td class="memItemLeft" align="right" valign="top">integer, parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelists.html#acd71057d69aae0af45bbd9b1313aebd0">default_newslotsallocated</a> = 5</td></tr>
+<tr class="memdesc:acd71057d69aae0af45bbd9b1313aebd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of slots to create on list capacity increase.  <a href="namespacelists.html#acd71057d69aae0af45bbd9b1313aebd0">More...</a><br /></td></tr>
+<tr class="separator:acd71057d69aae0af45bbd9b1313aebd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>List module. </p>
@@ -112,6 +164,470 @@ Functions/Subroutines</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>Created: 05/27/2020 <br  />
  </dd></dl>
 </div><h2 class="groupheader">Function/Subroutine Documentation</h2>
+<a id="a9440843aea42e81dc51478583921bca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9440843aea42e81dc51478583921bca9">&#9670;&nbsp;</a></span>add_listitem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">elemental subroutine lists::add_listitem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1listitem.html">listitem</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(*), intent(in)&#160;</td>
+          <td class="paramname"><em>item</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td>new item to be allocated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00428">428</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a1388480ef6baf454539463810aef2dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1388480ef6baf454539463810aef2dc6">&#9670;&nbsp;</a></span>assignlist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::assignlist </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(out)&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subroutine for List assignment operator. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00336">336</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="list_8f90_source.html#l00091">lists::list::assignment()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacelists_a1388480ef6baf454539463810aef2dc6_icgraph.png" border="0" usemap="#namespacelists_a1388480ef6baf454539463810aef2dc6_icgraph" alt=""/></div>
+<map name="namespacelists_a1388480ef6baf454539463810aef2dc6_icgraph" id="namespacelists_a1388480ef6baf454539463810aef2dc6_icgraph">
+<area shape="rect" title="Subroutine for List assignment operator." alt="" coords="200,5,309,32"/>
+<area shape="rect" href="structlists_1_1list.html#ac9bb3920835eb554124e6d7c3b0dafa0" title="Assignment operator for the List type, this enables copying of RHS List items to LHS List...." alt="" coords="5,5,152,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abce3ea21341c156ef884c471eac06fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce3ea21341c156ef884c471eac06fcc">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::clear </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear the contents of List. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00366">366</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="ada463ea7b5f650ece6dc310a0d47e677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada463ea7b5f650ece6dc310a0d47e677">&#9670;&nbsp;</a></span>create_newslots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::create_newslots </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>NumSlots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subroutine to allocate storage for new slots. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">numslots</td><td>Number of slots to create </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00308">308</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a21d289096305310be0219ca73394248f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d289096305310be0219ca73394248f">&#9670;&nbsp;</a></span>del_listitem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::del_listitem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1listitem.html">listitem</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00448">448</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a9e6c98490c22e2522fba176105adf48d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6c98490c22e2522fba176105adf48d">&#9670;&nbsp;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::destroy </td>
+          <td>(</td>
+          <td class="paramtype">type(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00412">412</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="list_8f90_source.html#l00136">lists::list::destroy()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespacelists_a9e6c98490c22e2522fba176105adf48d_icgraph.png" border="0" usemap="#namespacelists_a9e6c98490c22e2522fba176105adf48d_icgraph" alt=""/></div>
+<map name="namespacelists_a9e6c98490c22e2522fba176105adf48d_icgraph" id="namespacelists_a9e6c98490c22e2522fba176105adf48d_icgraph">
+<area shape="rect" title="Destructor." alt="" coords="176,5,273,32"/>
+<area shape="rect" href="structlists_1_1list.html#a9cf30c7b35c6b60f5ef5ebcaa1d5abf1" title="Frees up all the memory allocated." alt="" coords="5,5,128,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a72ffef12c9623d0a283f5dabc3f78a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ffef12c9623d0a283f5dabc3f78a79">&#9670;&nbsp;</a></span>isvalid_listitem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pure elemental logical function lists::isvalid_listitem </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1listitem.html">listitem</a>), intent(in)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00459">459</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a639e84f87b72b88883273d14f6a50aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a639e84f87b72b88883273d14f6a50aa4">&#9670;&nbsp;</a></span>item_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(*) function, pointer lists::item_at </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout), target&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>Index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to the item with the requested index (1-based) Pointer will not be associated in case of an exception. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of the requested item </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00203">203</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="aa7a2bdf5679a8a7dcc5bf306bcd52d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a2bdf5679a8a7dcc5bf306bcd52d1b">&#9670;&nbsp;</a></span>item_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(*) function, allocatable lists::item_back </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the last item in List. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00234">234</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a86344f8258fd804593ccf61322b66e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86344f8258fd804593ccf61322b66e5d">&#9670;&nbsp;</a></span>item_erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::item_erase </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erase an item at the given position. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00280">280</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a1002304d82cdccb25ea74dde7c417369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1002304d82cdccb25ea74dde7c417369">&#9670;&nbsp;</a></span>item_front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(*) function, allocatable lists::item_front </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the item with the index=1. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00222">222</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="ae1019ae525fdb74e6e31400aa1e9e56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1019ae525fdb74e6e31400aa1e9e56a">&#9670;&nbsp;</a></span>item_insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::item_insert </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">integer, intent(in)&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(*), intent(in)&#160;</td>
+          <td class="paramname"><em>NewItem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts an item at the given position. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00245">245</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
 <a id="af9b06edaffbd77255284bec313bfbb75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9b06edaffbd77255284bec313bfbb75">&#9670;&nbsp;</a></span>list_size()</h2>
 
@@ -134,13 +650,147 @@ Functions/Subroutines</h2></td></tr>
 
 </div>
 </div>
+<a id="a97e296497b3c873e0c8090d64c25b8cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e296497b3c873e0c8090d64c25b8cb">&#9670;&nbsp;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class(*) function, allocatable lists::pop_back </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to extract the last item of List. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00187">187</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a10cda577a2a13e320937d14631bda6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10cda577a2a13e320937d14631bda6ba">&#9670;&nbsp;</a></span>push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer function lists::push_back </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class(*), intent(in)&#160;</td>
+          <td class="paramname"><em>newitem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subroutine to append an element at the back of the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">newitem</td><td>item to add to the list </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on error, otherwise returns the position of the element </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00161">161</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<a id="a19414ccb0a2d148bae4092ba7dce3317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19414ccb0a2d148bae4092ba7dce3317">&#9670;&nbsp;</a></span>shrinktofit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">subroutine lists::shrinktofit </td>
+          <td>(</td>
+          <td class="paramtype">class(<a class="el" href="structlists_1_1list.html">list</a>), intent(inout)&#160;</td>
+          <td class="paramname"><em>me</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Free up unused allocated memory and make List capacity equal to its size. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00381">381</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="acd71057d69aae0af45bbd9b1313aebd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd71057d69aae0af45bbd9b1313aebd0">&#9670;&nbsp;</a></span>default_newslotsallocated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, parameter lists::default_newslotsallocated = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default number of slots to create on list capacity increase. </p>
+
+<p class="definition">Definition at line <a class="el" href="list_8f90_source.html#l00040">40</a> of file <a class="el" href="list_8f90_source.html">list.f90</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelists.html">lists</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

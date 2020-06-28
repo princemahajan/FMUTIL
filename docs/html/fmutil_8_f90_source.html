@@ -93,164 +93,38 @@ $(document).ready(function(){initNavTree('fmutil_8_f90_source.html',''); initRes
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">!   / /_  / /|_/ / / / / / /  / // /  </span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">!  / __/ / /  / / /_/ / / / _/ // /___</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">! /_/   /_/  /_/\____/ /_/ /___/_____/</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">!</span><span class="comment"></span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">!&gt; \mainpage    FMUTIL: Fortran Miscellaneous UTILities</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">!! \details     A Fortran library for miscellaneous utilities such as data structures</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">!!              (List, Vector), root-finding for polynomials and nonlinear equations, etc.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">!! \author      Bharat Mahajan (https://www.researchgate.net/profile/Bharat_Mahajan2)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">!! \version     0.1</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">!! \date        Created: 02/12/2020    </span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">!! \copyright   Copyright 2020 Bharat Mahajan  </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">!! \section     sec Introduction </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">!!              FMUTil is a modern object-oriented Fortran library that provides (as of now):</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">!!              - Two data structures</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">!!                  + Vector, similar to C++ STL Vectors</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">!!                  + List, similar to Python List</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">!!              - Root-finding algorithm for polynomials by solving associated eigenvalue</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">!!                problem</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">!!              - Root-finding of a nonlinear equation using Brent&#39;s algorithm</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">!!              - A binary search method for sorted arrays</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">!! \section     usagesec How to Use</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">!!              + For Vector data structure of any type, define the type of the Vector </span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">!!              element and the assignment operation as follows.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">!!              </span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">!!              \code{.f90}</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">!!                  module TestModule</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">!!                  use FMUtil</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">!!                  type, extends(VecElem) :: relem</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">!!                      real :: rdata</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">!!                  contains</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">!!                      procedure :: AssignVecElem =&gt; assign_relem</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">!!                  end type relem</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">!!                  contains</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">!!    </span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">!!                  subroutine assign_relem(lhs, rhs)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">!!                      implicit none</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">!!                      class(relem), intent(out) :: lhs</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">!!                      class(VecElem), intent(in) :: rhs</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">!!                      select type (rhs)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">!!                      class is (relem)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">!!                          lhs%rdata = rhs%rdata</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">!!                      end select    </span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">!!                  end subroutine assign_relem</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">!!                  end module TestModule</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">!!              \endcode</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">!!              + Then, use Vector using</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">!!              \code{.f90}</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">!!                  program Test</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">!!                  use FMUtil</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">!!                  use TestModule</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">!!                  integer :: ctr</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">!!                  type(Vector) :: vec</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">!!                  type(relem) :: rd1, rd2</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">!!                  rd1%rdata = 3.1416</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">!!                  ctr = vec%PushBack(rd1)    </span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">!!                  rd1%rdata = 2.718</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">!!                  call vec%Insert(2,[rd1, rd1])</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">!!                  do ctr = 1, vec%Size()</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">!!                      rd2 = vec%ElemAt(ctr)</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">!!                      print *, &#39;int(&#39;, ctr, &#39;)=&#39;, rd2%rdata        </span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">!!                  end do    </span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">!!                  end program Test</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">!!              \endcode</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">!!              + List can be used as</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">!!              \code{.f90}</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">!!                  program Test</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">!!                  use FMUtil</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">!!                  integer :: ctr</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">!!                  type(List) :: list</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">!!                  class(*), allocatable :: item</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">!!                  type(relem) :: rd1</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">!!                  rd1%rdata = 3.1416</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">!!                  ctr = list%PushBack(100)</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">!!                  ctr = list%PushBack(rd1)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">!!                  ctr = list%PushBack(rd1%rdata)</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">!!                  ctr = list%Insert(3,&#39;pi&#39;)    </span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">!!                  do ctr = 1, list%Size()</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">!!                      item = list%Item(ctr)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">!!                      select type (item)</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">!!                      type is (real)</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">!!                          print *, item</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">!!                      type is (relem)</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">!!                          print *, item</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">!!                      type is (integer)</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">!!                          print *, item</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">!!                      type is (chanracter(len=*))</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">!!                          print *, item</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">!!                      end select</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">!!                  end do  </span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">!!                  end program Test  </span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">!!              \endcode</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">!!              + See the test program files, test.f90 and testmod.f90, in tests folder</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">!!              for more features and functionality.</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">!! \section     Installation</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">!!              FMUTIL is tested with Intel Fortran Compiler and MinGW-W64 gfortran. Doxyfile is </span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">!!              provided for generating extensive API documentation using Doxygen. FLINT has no</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">!!              dependency on any other library. The CMakeLists file is provided along with </span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">!!              additional CMake modules for compiler options and a Find module for finding and</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">!!              linking Intel MKL is also provided. These files can be used to auto generate </span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">!!              Visual Studio projects or makefiles on Windows and Linux using CMake. </span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">!!              A find module for FMUTIL is provided that generates CMake config files for </span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">!!              easily linking FMUTIL using the find_package() command. The steps to link FMUTIL </span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">!!              in cmake-based projects are:</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">!!              + In cmake GUI or command-line, set FMUTIL_INSTALL_LIB_DIR to the desired directory, </span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">!!                      where the compiled library, modules, and cmake config files will be installed.</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">!!              + In cmake GUI or command-line, set FMUTIL_INSTALL_BIN_DIR to the desired directory, </span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">!!                      where the compiled test executables will be installed.</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">!!              + In your project CMakeLists.txt, insert</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">!!</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">!!              \code</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">!!                  find_package(FMUTIL REQUIRED 0.1 CONFIG </span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">!!                      PATHS &quot;&lt;SAME_PATH_AS_IN_FMUTIL_INSTALL_LIB_DIR&gt;&quot; NO_CMAKE_PACKAGE_REGISTRY)</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">!!                  target_link_libraries(&lt;YOUR_TARGET_NAME&gt; FMUTIL::FMUTIL)</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">!!              \endcode</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">!</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">!############################################################################################</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="namespacefmutil.html">  138</a></span>&#160;<span class="keyword">module</span> <a class="code" href="namespacefmutil.html">fmutil</a></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">! Base Module</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacefmutilbase.html">fmutilbase</a></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">! Root finding module</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacerootfinding.html">rootfinding</a></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">! search algorithms</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacesearch.html">search</a></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">! data structures</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacevectors.html">vectors</a></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacelists.html">lists</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">!</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">!</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">!############################################################################################</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="namespacefmutil.html">  151</a></span>&#160;<span class="keyword">module</span> <a class="code" href="namespacefmutil.html">fmutil</a></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">contains</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">! Base Module</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacefmutilbase.html">fmutilbase</a></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">! Root finding module</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacerootfinding.html">rootfinding</a></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">end module </span><a class="code" href="namespacefmutil.html">fmutil</a></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">! search algorithms</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacesearch.html">search</a></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">! data structures</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacevectors.html">vectors</a></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">use </span><a class="code" href="namespacelists.html">lists</a></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">implicit none</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">contains</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">end module </span><a class="code" href="namespacefmutil.html">fmutil</a></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacelists_html"><div class="ttname"><a href="namespacelists.html">lists</a></div><div class="ttdoc">List module.</div><div class="ttdef"><b>Definition:</b> <a href="list_8f90_source.html#l00031">list.f90:31</a></div></div>
 <div class="ttc" id="anamespacesearch_html"><div class="ttname"><a href="namespacesearch.html">search</a></div><div class="ttdoc">Search Module.</div><div class="ttdef"><b>Definition:</b> <a href="search_8f90_source.html#l00031">search.f90:31</a></div></div>
-<div class="ttc" id="anamespacefmutil_html"><div class="ttname"><a href="namespacefmutil.html">fmutil</a></div><div class="ttdef"><b>Definition:</b> <a href="fmutil_8_f90_source.html#l00138">fmutil.F90:138</a></div></div>
+<div class="ttc" id="anamespacefmutil_html"><div class="ttname"><a href="namespacefmutil.html">fmutil</a></div><div class="ttdef"><b>Definition:</b> <a href="fmutil_8_f90_source.html#l00151">fmutil.F90:151</a></div></div>
 <div class="ttc" id="anamespacefmutilbase_html"><div class="ttname"><a href="namespacefmutilbase.html">fmutilbase</a></div><div class="ttdoc">FMUTIL Base Module.</div><div class="ttdef"><b>Definition:</b> <a href="fmutil__base_8_f90_source.html#l00031">fmutil_base.F90:31</a></div></div>
 <div class="ttc" id="anamespacerootfinding_html"><div class="ttname"><a href="namespacerootfinding.html">rootfinding</a></div><div class="ttdoc">RootFinding Module.</div><div class="ttdef"><b>Definition:</b> <a href="rootfinding_8f90_source.html#l00032">rootfinding.f90:32</a></div></div>
 <div class="ttc" id="anamespacevectors_html"><div class="ttname"><a href="namespacevectors.html">vectors</a></div><div class="ttdoc">Vector module.</div><div class="ttdef"><b>Definition:</b> <a href="vector_8f90_source.html#l00032">vector.f90:32</a></div></div>
@@ -258,7 +132,7 @@ $(document).ready(function(){initNavTree('fmutil_8_f90_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="fmutil_8_f90.html">fmutil.F90</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

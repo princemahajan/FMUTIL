@@ -130,6 +130,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a58bdcdd6cf350747ceb1eb0626d08dca"><td class="memItemLeft" align="right" valign="top">real(wp), parameter, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a58bdcdd6cf350747ceb1eb0626d08dca">fmutilbase::inf</a> = huge(1.0_WP)</td></tr>
 <tr class="memdesc:a58bdcdd6cf350747ceb1eb0626d08dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infinity definition.  <a href="namespacefmutilbase.html#a58bdcdd6cf350747ceb1eb0626d08dca">More...</a><br /></td></tr>
 <tr class="separator:a58bdcdd6cf350747ceb1eb0626d08dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373f472600c91451a7cb0fb47dbf8c7a"><td class="memItemLeft" align="right" valign="top">integer, private&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">fmutilbase::ind</a></td></tr>
+<tr class="memdesc:a373f472600c91451a7cb0fb47dbf8c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity matrix - 3x3.  <a href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">More...</a><br /></td></tr>
+<tr class="separator:a373f472600c91451a7cb0fb47dbf8c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18f159d1dd2236cab193c5271566a9c"><td class="memItemLeft" align="right" valign="top">logical, dimension(*), parameter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">fmutilbase::nzind3</a> = [ (ind == (3*(ind/3)+(ind/3+1)), ind=1,8), .TRUE.]</td></tr>
 <tr class="separator:ae18f159d1dd2236cab193c5271566a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a465125de0eedfd1b4e09490c551179ef"><td class="memItemLeft" align="right" valign="top">real(wp), dimension(*, *), parameter, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a465125de0eedfd1b4e09490c551179ef">fmutilbase::i3</a> = reshape([merge([(1.0_WP, ind=1,9)], [(0.0_WP, ind=1,9)], nzind3)], [3,3])</td></tr>
@@ -146,7 +149,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="fmutil__base_8_f90.html">fmutil_base.F90</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

@@ -1,4 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structvectors_1_1vecelem.html" title="Abstract vector element type that must be extended by user to define the type for the Vector elements..." alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node2" href="$structvectors_1_1invalidvecelem.html" title="Invalid Vector element type that is returned in case of an exception." alt="" coords="172,5,325,32"/>
+<area shape="rect" id="node1" href="$interfacevectors_1_1assign__vecelem.html" title="Interface for the procedure invoked during assignment of VecElem." alt="" coords="5,5,168,32"/>
 </map>

@@ -101,8 +101,9 @@ $(document).ready(function(){initNavTree('structvectors_1_1vector.html',''); ini
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structvectors_1_1vector__coll__graph.png" border="0" usemap="#vectors_1_1vector_coll__map" alt="Collaboration graph"/></div>
 <map name="vectors_1_1vector_coll__map" id="vectors_1_1vector_coll__map">
-<area shape="rect" title="Vector type." alt="" coords="5,145,144,457"/>
-<area shape="rect" title="Pointer to a single bucket." alt="" coords="23,5,127,83"/>
+<area shape="rect" title="Vector type." alt="" coords="5,403,144,715"/>
+<area shape="rect" href="structvectors_1_1bktptr.html" title="Pointer to a single bucket." alt="" coords="23,263,127,340"/>
+<area shape="rect" href="structvectors_1_1bkt.html" title="Internal Bucket sturcture. Each bucket can contain a number of elements." alt="" coords="19,5,131,200"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -120,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5da59865e2f1f03d5dd8648bea7c16b2"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a5da59865e2f1f03d5dd8648bea7c16b2">init</a> =&gt; <a class="el" href="namespacevectors.html#a7438b19e1493cb69cb69819dcb930e31">initialize</a></td></tr>
 <tr class="memdesc:a5da59865e2f1f03d5dd8648bea7c16b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the vector with different options and allocates memory.  <a href="structvectors_1_1vector.html#a5da59865e2f1f03d5dd8648bea7c16b2">More...</a><br /></td></tr>
 <tr class="separator:a5da59865e2f1f03d5dd8648bea7c16b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4007e2eea00e38b5d38c463652c618c"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#ac4007e2eea00e38b5d38c463652c618c">size</a> =&gt; vec_size</td></tr>
+<tr class="memitem:ac4007e2eea00e38b5d38c463652c618c"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#ac4007e2eea00e38b5d38c463652c618c">size</a> =&gt; <a class="el" href="namespacevectors.html#a95b69963c01388034c0d6d2710048eb7">vec_size</a></td></tr>
 <tr class="memdesc:ac4007e2eea00e38b5d38c463652c618c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of the vector or number of elements stored.  <a href="structvectors_1_1vector.html#ac4007e2eea00e38b5d38c463652c618c">More...</a><br /></td></tr>
 <tr class="separator:ac4007e2eea00e38b5d38c463652c618c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecf661ef561021c8676ece9392dd8d21"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#aecf661ef561021c8676ece9392dd8d21">capacity</a></td></tr>
@@ -135,31 +136,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa468c2f03f0321609254fd2d59e848e8"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#aa468c2f03f0321609254fd2d59e848e8">shrinktofit</a></td></tr>
 <tr class="memdesc:aa468c2f03f0321609254fd2d59e848e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shrink the capacity by deallocating unused buckets if needed. It tries to make Capacity as close to Size as possible.  <a href="structvectors_1_1vector.html#aa468c2f03f0321609254fd2d59e848e8">More...</a><br /></td></tr>
 <tr class="separator:aa468c2f03f0321609254fd2d59e848e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af17248bc0ddf3ecf6b6e2c8e7106f85f"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#af17248bc0ddf3ecf6b6e2c8e7106f85f">pushback</a> =&gt; push_back</td></tr>
+<tr class="memitem:af17248bc0ddf3ecf6b6e2c8e7106f85f"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#af17248bc0ddf3ecf6b6e2c8e7106f85f">pushback</a> =&gt; <a class="el" href="namespacevectors.html#a705372dafdb5ffef4cd6fd155040395a">push_back</a></td></tr>
 <tr class="memdesc:af17248bc0ddf3ecf6b6e2c8e7106f85f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push one element at the back of the vector.  <a href="structvectors_1_1vector.html#af17248bc0ddf3ecf6b6e2c8e7106f85f">More...</a><br /></td></tr>
 <tr class="separator:af17248bc0ddf3ecf6b6e2c8e7106f85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93fa1bc2e8b7ea75081d250d33e50a7f"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a93fa1bc2e8b7ea75081d250d33e50a7f">popback</a> =&gt; pop_back</td></tr>
+<tr class="memitem:a93fa1bc2e8b7ea75081d250d33e50a7f"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a93fa1bc2e8b7ea75081d250d33e50a7f">popback</a> =&gt; <a class="el" href="namespacevectors.html#a6211481c8fda24856e1af95aa81de8b3">pop_back</a></td></tr>
 <tr class="memdesc:a93fa1bc2e8b7ea75081d250d33e50a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop one element from the back of the vector.  <a href="structvectors_1_1vector.html#a93fa1bc2e8b7ea75081d250d33e50a7f">More...</a><br /></td></tr>
 <tr class="separator:a93fa1bc2e8b7ea75081d250d33e50a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adff46262e647b407f8ab4bc756bead80"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#adff46262e647b407f8ab4bc756bead80">elemat</a> =&gt; elem_at</td></tr>
+<tr class="memitem:adff46262e647b407f8ab4bc756bead80"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#adff46262e647b407f8ab4bc756bead80">elemat</a> =&gt; <a class="el" href="namespacevectors.html#a9bc95be2c3ab9efdd8d93e6bd4958888">elem_at</a></td></tr>
 <tr class="memdesc:adff46262e647b407f8ab4bc756bead80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the element with the given index (1-based)  <a href="structvectors_1_1vector.html#adff46262e647b407f8ab4bc756bead80">More...</a><br /></td></tr>
 <tr class="separator:adff46262e647b407f8ab4bc756bead80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7524c8c1ff60b664d1877a4c792d03d3"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a7524c8c1ff60b664d1877a4c792d03d3">front</a> =&gt; elem_front</td></tr>
+<tr class="memitem:a7524c8c1ff60b664d1877a4c792d03d3"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a7524c8c1ff60b664d1877a4c792d03d3">front</a> =&gt; <a class="el" href="namespacevectors.html#a03dc18f69fc6dae9e9d5f4228d679854">elem_front</a></td></tr>
 <tr class="memdesc:a7524c8c1ff60b664d1877a4c792d03d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element with the index-1.  <a href="structvectors_1_1vector.html#a7524c8c1ff60b664d1877a4c792d03d3">More...</a><br /></td></tr>
 <tr class="separator:a7524c8c1ff60b664d1877a4c792d03d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af617095581ab7179ed77635f8d4996e3"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#af617095581ab7179ed77635f8d4996e3">back</a> =&gt; elem_back</td></tr>
+<tr class="memitem:af617095581ab7179ed77635f8d4996e3"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#af617095581ab7179ed77635f8d4996e3">back</a> =&gt; <a class="el" href="namespacevectors.html#a33a2a21ea6c129bb880786a536251fed">elem_back</a></td></tr>
 <tr class="memdesc:af617095581ab7179ed77635f8d4996e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element with the last index.  <a href="structvectors_1_1vector.html#af617095581ab7179ed77635f8d4996e3">More...</a><br /></td></tr>
 <tr class="separator:af617095581ab7179ed77635f8d4996e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2bab25448e450871de8657bfac84a7b"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#ab2bab25448e450871de8657bfac84a7b">slice</a> =&gt; vec_slice</td></tr>
+<tr class="memitem:ab2bab25448e450871de8657bfac84a7b"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#ab2bab25448e450871de8657bfac84a7b">slice</a> =&gt; <a class="el" href="namespacevectors.html#a074370b3a7f3a40803c3dfe3a672dae1">vec_slice</a></td></tr>
 <tr class="memdesc:ab2bab25448e450871de8657bfac84a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array containing vector elements within the requested lower and upper bounds. This is inefficient as it copies the requested contents in a new array and returns it.  <a href="structvectors_1_1vector.html#ab2bab25448e450871de8657bfac84a7b">More...</a><br /></td></tr>
 <tr class="separator:ab2bab25448e450871de8657bfac84a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d67ac13c253d86c6c5722479aea0b52"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a1d67ac13c253d86c6c5722479aea0b52">bktslice</a> =&gt; bkt_slice</td></tr>
+<tr class="memitem:a1d67ac13c253d86c6c5722479aea0b52"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a1d67ac13c253d86c6c5722479aea0b52">bktslice</a> =&gt; <a class="el" href="namespacevectors.html#a4fe3b436e831c969202bf26ba52b0cdc">bkt_slice</a></td></tr>
 <tr class="memdesc:a1d67ac13c253d86c6c5722479aea0b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer to the element array starting from the user-specified lower bound. If the upper bound is beyond the extent of the current data bucket, then the array is truncated at the the current bucket boundary. This is an efficient method as no copying of data is performed.  <a href="structvectors_1_1vector.html#a1d67ac13c253d86c6c5722479aea0b52">More...</a><br /></td></tr>
 <tr class="separator:a1d67ac13c253d86c6c5722479aea0b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f55c76ee348ee2c696b336d81d86eed"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a5f55c76ee348ee2c696b336d81d86eed">insert</a> =&gt; elem_insert</td></tr>
+<tr class="memitem:a5f55c76ee348ee2c696b336d81d86eed"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a5f55c76ee348ee2c696b336d81d86eed">insert</a> =&gt; <a class="el" href="namespacevectors.html#ac317befa97e00d4f87629c8769bc78cb">elem_insert</a></td></tr>
 <tr class="memdesc:a5f55c76ee348ee2c696b336d81d86eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the element/elements at the given index and relocate elements at the later indices.  <a href="structvectors_1_1vector.html#a5f55c76ee348ee2c696b336d81d86eed">More...</a><br /></td></tr>
 <tr class="separator:a5f55c76ee348ee2c696b336d81d86eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee704e5c8cafba6a1424ea2728dc5f28"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#aee704e5c8cafba6a1424ea2728dc5f28">erase</a> =&gt; elem_erase</td></tr>
+<tr class="memitem:aee704e5c8cafba6a1424ea2728dc5f28"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#aee704e5c8cafba6a1424ea2728dc5f28">erase</a> =&gt; <a class="el" href="namespacevectors.html#a647d85c3fb44dea7205e37dba9182353">elem_erase</a></td></tr>
 <tr class="memdesc:aee704e5c8cafba6a1424ea2728dc5f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the element/elements at the given index and relocate the elements at the later indices.  <a href="structvectors_1_1vector.html#aee704e5c8cafba6a1424ea2728dc5f28">More...</a><br /></td></tr>
 <tr class="separator:aee704e5c8cafba6a1424ea2728dc5f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2de7c560c55194012e0c228d0ea6a8de"><td class="memItemLeft" align="right" valign="top">procedure, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a2de7c560c55194012e0c228d0ea6a8de">clear</a></td></tr>
@@ -192,7 +193,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:affcca09d0e0e7faeee5760146f3089d4"><td class="memItemLeft" align="right" valign="top">class(<a class="el" href="structvectors_1_1vecelem.html">vecelem</a>), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#affcca09d0e0e7faeee5760146f3089d4">moldelem</a></td></tr>
 <tr class="memdesc:affcca09d0e0e7faeee5760146f3089d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mold element to be used for memory allocation.  <a href="structvectors_1_1vector.html#affcca09d0e0e7faeee5760146f3089d4">More...</a><br /></td></tr>
 <tr class="separator:affcca09d0e0e7faeee5760146f3089d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a92f3663f1f44ddac7bcb6903db7d39"><td class="memItemLeft" align="right" valign="top">type(bktptr), dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a1a92f3663f1f44ddac7bcb6903db7d39">vecdata</a></td></tr>
+<tr class="memitem:a1a92f3663f1f44ddac7bcb6903db7d39"><td class="memItemLeft" align="right" valign="top">type(<a class="el" href="structvectors_1_1bktptr.html">bktptr</a>), dimension(:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvectors_1_1vector.html#a1a92f3663f1f44ddac7bcb6903db7d39">vecdata</a></td></tr>
 <tr class="memdesc:a1a92f3663f1f44ddac7bcb6903db7d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of bucket pointers.  <a href="structvectors_1_1vector.html#a1a92f3663f1f44ddac7bcb6903db7d39">More...</a><br /></td></tr>
 <tr class="separator:a1a92f3663f1f44ddac7bcb6903db7d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -216,6 +217,19 @@ Public Attributes</h2></td></tr>
 <p>Assignment operator for the Vector type, this enables copying of RHS vector contents to LHS vector. Note that after this operation, LHS Vector will be an exact copy of the RHS vector including data and internal state. </p>
 
 <p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00149">149</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+<p class="reference">References <a class="el" href="vector_8f90_source.html#l00883">vectors::assignvector()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="structvectors_1_1vector_a2fd6ce685e36748e35c9e22bab4230e4_cgraph.png" border="0" usemap="#structvectors_1_1vector_a2fd6ce685e36748e35c9e22bab4230e4_cgraph" alt=""/></div>
+<map name="structvectors_1_1vector_a2fd6ce685e36748e35c9e22bab4230e4_cgraph" id="structvectors_1_1vector_a2fd6ce685e36748e35c9e22bab4230e4_cgraph">
+<area shape="rect" title="Assignment operator for the Vector type, this enables copying of RHS vector contents to LHS vector...." alt="" coords="5,5,185,32"/>
+<area shape="rect" href="namespacevectors.html#a6ba2272a5bc90d10009f206e6b1217d5" title="Subroutine for Vector assignment operator." alt="" coords="233,5,376,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -346,6 +360,19 @@ Public Attributes</h2></td></tr>
 <p>Frees up all the memory allocated. </p>
 
 <p class="definition">Definition at line <a class="el" href="vector_8f90_source.html#l00214">214</a> of file <a class="el" href="vector_8f90_source.html">vector.f90</a>.</p>
+
+<p class="reference">References <a class="el" href="vector_8f90_source.html#l00913">vectors::destroy()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="structvectors_1_1vector_aefdc62dc275fa1ba50a43e1a774eb62f_cgraph.png" border="0" usemap="#structvectors_1_1vector_aefdc62dc275fa1ba50a43e1a774eb62f_cgraph" alt=""/></div>
+<map name="structvectors_1_1vector_aefdc62dc275fa1ba50a43e1a774eb62f_cgraph" id="structvectors_1_1vector_aefdc62dc275fa1ba50a43e1a774eb62f_cgraph">
+<area shape="rect" title="Frees up all the memory allocated." alt="" coords="5,5,161,32"/>
+<area shape="rect" href="namespacevectors.html#a1354fdeb47e244feaa681dbb1d1b3e84" title="Destructor." alt="" coords="209,5,324,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -715,7 +742,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">type(bktptr), dimension(:), allocatable vectors::vector::vecdata</td>
+          <td class="memname">type(<a class="el" href="structvectors_1_1bktptr.html">bktptr</a>), dimension(:), allocatable vectors::vector::vecdata</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -735,7 +762,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacevectors.html">vectors</a></li><li class="navelem"><a class="el" href="structvectors_1_1vector.html">vector</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

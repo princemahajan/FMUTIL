@@ -124,14 +124,17 @@ Variables</h2></td></tr>
 <tr class="memitem:a58bdcdd6cf350747ceb1eb0626d08dca"><td class="memItemLeft" align="right" valign="top">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a58bdcdd6cf350747ceb1eb0626d08dca">inf</a> = huge(1.0_WP)</td></tr>
 <tr class="memdesc:a58bdcdd6cf350747ceb1eb0626d08dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infinity definition.  <a href="namespacefmutilbase.html#a58bdcdd6cf350747ceb1eb0626d08dca">More...</a><br /></td></tr>
 <tr class="separator:a58bdcdd6cf350747ceb1eb0626d08dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18f159d1dd2236cab193c5271566a9c"><td class="memItemLeft" align="right" valign="top">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">nzind3</a> = [ (ind == (3*(ind/3)+(ind/3+1)), ind=1,8), .TRUE.]</td></tr>
+<tr class="memitem:a373f472600c91451a7cb0fb47dbf8c7a"><td class="memItemLeft" align="right" valign="top">integer, private&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a></td></tr>
+<tr class="memdesc:a373f472600c91451a7cb0fb47dbf8c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity matrix - 3x3.  <a href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">More...</a><br /></td></tr>
+<tr class="separator:a373f472600c91451a7cb0fb47dbf8c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae18f159d1dd2236cab193c5271566a9c"><td class="memItemLeft" align="right" valign="top">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">nzind3</a> = [ (<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a> == (3*(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/3)+(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/3+1)), <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,8), .TRUE.]</td></tr>
 <tr class="separator:ae18f159d1dd2236cab193c5271566a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a465125de0eedfd1b4e09490c551179ef"><td class="memItemLeft" align="right" valign="top">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*, *), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a465125de0eedfd1b4e09490c551179ef">i3</a> = reshape([merge([(1.0_WP, ind=1,9)], [(0.0_WP, ind=1,9)], <a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">nzind3</a>)], [3,3])</td></tr>
+<tr class="memitem:a465125de0eedfd1b4e09490c551179ef"><td class="memItemLeft" align="right" valign="top">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*, *), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a465125de0eedfd1b4e09490c551179ef">i3</a> = reshape([merge([(1.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,9)], [(0.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,9)], <a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">nzind3</a>)], [3,3])</td></tr>
 <tr class="separator:a465125de0eedfd1b4e09490c551179ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c7ba21c487683921b8f9ad918493db"><td class="memItemLeft" align="right" valign="top">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">nzind6</a> = [ (ind == (6*(ind/6)+(ind/6+1)), ind=1,6**2-1), .TRUE.]</td></tr>
+<tr class="memitem:a20c7ba21c487683921b8f9ad918493db"><td class="memItemLeft" align="right" valign="top">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">nzind6</a> = [ (<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a> == (6*(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/6)+(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/6+1)), <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,6**2-1), .TRUE.]</td></tr>
 <tr class="memdesc:a20c7ba21c487683921b8f9ad918493db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identity matrix - 6x6.  <a href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">More...</a><br /></td></tr>
 <tr class="separator:a20c7ba21c487683921b8f9ad918493db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad962a215a3052890ae3115a72da9cdde"><td class="memItemLeft" align="right" valign="top">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*, *), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#ad962a215a3052890ae3115a72da9cdde">i6</a> = reshape([merge([(1.0_WP, ind=1,6**2)], [(0.0_WP, ind=1,6**2)], <a class="el" href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">nzind6</a>)], [6,6])</td></tr>
+<tr class="memitem:ad962a215a3052890ae3115a72da9cdde"><td class="memItemLeft" align="right" valign="top">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*, *), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefmutilbase.html#ad962a215a3052890ae3115a72da9cdde">i6</a> = reshape([merge([(1.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,6**2)], [(0.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,6**2)], <a class="el" href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">nzind6</a>)], [6,6])</td></tr>
 <tr class="separator:ad962a215a3052890ae3115a72da9cdde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -216,7 +219,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*,*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public fmutilbase::i3 = reshape([merge([(1.0_WP, ind=1,9)], [(0.0_WP, ind=1,9)], <a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">nzind3</a>)], [3,3])</td>
+          <td class="memname">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*,*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public fmutilbase::i3 = reshape([merge([(1.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,9)], [(0.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,9)], <a class="el" href="namespacefmutilbase.html#ae18f159d1dd2236cab193c5271566a9c">nzind3</a>)], [3,3])</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,12 +235,38 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*,*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public fmutilbase::i6 = reshape([merge([(1.0_WP, ind=1,6**2)], [(0.0_WP, ind=1,6**2)], <a class="el" href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">nzind6</a>)], [6,6])</td>
+          <td class="memname">real(<a class="el" href="namespacefmutilbase.html#ad9d93c8a42657c24cb098ac1fa839b37">wp</a>), dimension(*,*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a>, public fmutilbase::i6 = reshape([merge([(1.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,6**2)], [(0.0_WP, <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,6**2)], <a class="el" href="namespacefmutilbase.html#a20c7ba21c487683921b8f9ad918493db">nzind6</a>)], [6,6])</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="fmutil__base_8_f90_source.html#l00058">58</a> of file <a class="el" href="fmutil__base_8_f90_source.html">fmutil_base.F90</a>.</p>
+
+</div>
+</div>
+<a id="a373f472600c91451a7cb0fb47dbf8c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373f472600c91451a7cb0fb47dbf8c7a">&#9670;&nbsp;</a></span>ind</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, private fmutilbase::ind</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Identity matrix - 3x3. </p>
+
+<p class="definition">Definition at line <a class="el" href="fmutil__base_8_f90_source.html#l00050">50</a> of file <a class="el" href="fmutil__base_8_f90_source.html">fmutil_base.F90</a>.</p>
 
 </div>
 </div>
@@ -284,7 +313,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a> fmutilbase::nzind3 = [ (ind == (3*(ind/3)+(ind/3+1)), ind=1,8), .TRUE.]</td>
+          <td class="memname">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a> fmutilbase::nzind3 = [ (<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a> == (3*(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/3)+(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/3+1)), <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,8), .TRUE.]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -300,7 +329,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a> fmutilbase::nzind6 = [ (ind == (6*(ind/6)+(ind/6+1)), ind=1,6**2-1), .TRUE.]</td>
+          <td class="memname">logical, dimension(*), <a class="el" href="namespacefmutilbase.html#a4177680f1007abd27e27a03c68130ea8">parameter</a> fmutilbase::nzind6 = [ (<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a> == (6*(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/6)+(<a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>/6+1)), <a class="el" href="namespacefmutilbase.html#a373f472600c91451a7cb0fb47dbf8c7a">ind</a>=1,6**2-1), .TRUE.]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -431,7 +460,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefmutilbase.html">fmutilbase</a></li>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

@@ -93,17 +93,23 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
  </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2020 Bharat Mahajan <br  />
  </dd></dl>
+<h3><a class="anchor" id="Repository"></a>
+Repository</h3>
+<p><a href="https://github.com/princemahajan/FMUTIL">https://github.com/princemahajan/FMUTIL</a> </p>
 <h1><a class="anchor" id="sec"></a>
 Introduction</h1>
 <p>FMUTil is a modern object-oriented Fortran library that provides (as of now):</p><ul>
-<li>Two data structures<ul>
-<li>Vector, similar to C++ STL Vectors</li>
-<li>List, similar to Python List</li>
+<li>Data structures<ul>
+<li>Vector (similar to C++ STL Vectors) with fast vector slicing</li>
+<li>List (similar to Python List)</li>
 </ul>
 </li>
-<li>Root-finding algorithm for polynomials by solving associated eigenvalue problem</li>
-<li>Root-finding of a nonlinear equation using Brent's algorithm</li>
-<li>A binary search method for sorted arrays</li>
+<li>Root-finding algorithms<ul>
+<li>Polynomial roots by computing eigenvalues of the companion matirx (require Intel MKL)</li>
+<li>Roots of a nonlinear equation using Brent's algorithm</li>
+</ul>
+</li>
+<li>A simple binary search method for sorted arrays</li>
 </ul>
 <h1><a class="anchor" id="usagesec"></a>
 How to Use</h1>
@@ -187,8 +193,10 @@ How to Use</h1>
 </ul>
 <h1><a class="anchor" id="Installation"></a>
 Installation</h1>
-<p>FMUTIL is tested with Intel Fortran Compiler and MinGW-W64 gfortran. Doxyfile is provided for generating extensive API documentation using Doxygen. FLINT has no dependency on any other library. The CMakeLists file is provided along with additional CMake modules for compiler options and a Find module for finding and linking Intel MKL is also provided. These files can be used to auto generate Visual Studio projects or makefiles on Windows and Linux using CMake. A find module for FMUTIL is provided that generates CMake config files for easily linking FMUTIL using the find_package() command. The steps to link FMUTIL in cmake-based projects are:</p>
+<p>FMUTIL is tested with Intel Fortran Compiler and MinGW-W64 gfortran. Doxyfile is provided for generating extensive API documentation using Doxygen. FMUTIL has only dependency on Intel MKL for polynomial root-finding. The CMakeLists file is provided along with additional CMake modules for compiler options and a Find module for finding and linking Intel MKL is also provided. These files can be used to auto generate Visual Studio projects or makefiles on Windows and Linux using CMake. A find module for FMUTIL is provided that generates CMake config files for easily linking FMUTIL using the find_package() command. The steps to link FMUTIL in cmake-based projects are:</p>
 <ul>
+<li>Set the environment variable "MKLROOT" with the path to the Intel MKL installation directory. On typical Windows system, it looks something like "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.0.117\windows\mkl"</li>
+<li>Set the environment variable "IFORT_COMPILER20" with the path to the Fortran Compiler installation directory. On typical Windows system, it looks something like "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2020\windows\"</li>
 <li>In cmake GUI or command-line, set FMUTIL_INSTALL_LIB_DIR to the desired directory, where the compiled library, modules, and cmake config files will be installed.</li>
 <li>In cmake GUI or command-line, set FMUTIL_INSTALL_BIN_DIR to the desired directory, where the compiled test executables will be installed.</li>
 <li>In your project CMakeLists.txt, insert</li>
@@ -201,12 +209,12 @@ Installation</h1>
 </div><!-- doc-content -->
 <div class="ttc" id="astructtestmodule_1_1relem_html"><div class="ttname"><a href="structtestmodule_1_1relem.html">testmodule::relem</a></div><div class="ttdef"><b>Definition:</b> <a href="testmod_8f90_source.html#l00033">testmod.f90:33</a></div></div>
 <div class="ttc" id="anamespacetestmodule_html_a6d763f77fac16c97869e4147fa2544c3"><div class="ttname"><a href="namespacetestmodule.html#a6d763f77fac16c97869e4147fa2544c3">testmodule::assign_relem</a></div><div class="ttdeci">subroutine assign_relem(lhs, rhs)</div><div class="ttdef"><b>Definition:</b> <a href="testmod_8f90_source.html#l00049">testmod.f90:50</a></div></div>
-<div class="ttc" id="anamespacefmutil_html"><div class="ttname"><a href="namespacefmutil.html">fmutil</a></div><div class="ttdef"><b>Definition:</b> <a href="fmutil_8_f90_source.html#l00138">fmutil.F90:138</a></div></div>
+<div class="ttc" id="anamespacefmutil_html"><div class="ttname"><a href="namespacefmutil.html">fmutil</a></div><div class="ttdef"><b>Definition:</b> <a href="fmutil_8_f90_source.html#l00151">fmutil.F90:151</a></div></div>
 <div class="ttc" id="anamespacetestmodule_html"><div class="ttname"><a href="namespacetestmodule.html">testmodule</a></div><div class="ttdoc">TestMod Module.</div><div class="ttdef"><b>Definition:</b> <a href="testmod_8f90_source.html#l00030">testmod.f90:30</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Jun 27 2020 17:11:19 for FMUTIL by
+    <li class="footer">Generated on Sun Jun 28 2020 14:09:22 for FMUTIL by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

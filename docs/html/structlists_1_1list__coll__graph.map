@@ -1,4 +1,4 @@
 <map id="lists::list" name="lists::list">
-<area shape="rect" id="node1" title="List type." alt="" coords="5,145,147,457"/>
-<area shape="rect" id="node2" title="List Item type." alt="" coords="28,5,124,83"/>
+<area shape="rect" id="node1" title="List type." alt="" coords="5,189,147,501"/>
+<area shape="rect" id="node2" href="$structlists_1_1listitem.html" title="List Item type." alt="" coords="15,5,137,127"/>
 </map>

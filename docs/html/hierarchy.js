@@ -1,9 +1,12 @@
 var hierarchy =
 [
     [ "vectors::assign_vecelem", "interfacevectors_1_1assign__vecelem.html", null ],
+    [ "vectors::bkt", "structvectors_1_1bkt.html", null ],
+    [ "vectors::bktptr", "structvectors_1_1bktptr.html", null ],
     [ "rootfinding::func", "interfacerootfinding_1_1func.html", null ],
     [ "search::func", "interfacesearch_1_1func.html", null ],
     [ "lists::list", "structlists_1_1list.html", null ],
+    [ "lists::listitem", "structlists_1_1listitem.html", null ],
     [ "vecelem", null, [
       [ "testmodule::ielem", "structtestmodule_1_1ielem.html", null ],
       [ "testmodule::relem", "structtestmodule_1_1relem.html", null ]

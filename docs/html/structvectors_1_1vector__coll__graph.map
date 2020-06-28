@@ -1,4 +1,5 @@
 <map id="vectors::vector" name="vectors::vector">
-<area shape="rect" id="node1" title="Vector type." alt="" coords="5,145,144,457"/>
-<area shape="rect" id="node2" title="Pointer to a single bucket." alt="" coords="23,5,127,83"/>
+<area shape="rect" id="node1" title="Vector type." alt="" coords="5,403,144,715"/>
+<area shape="rect" id="node2" href="$structvectors_1_1bktptr.html" title="Pointer to a single bucket." alt="" coords="23,263,127,340"/>
+<area shape="rect" id="node3" href="$structvectors_1_1bkt.html" title="Internal Bucket sturcture. Each bucket can contain a number of elements." alt="" coords="19,5,131,200"/>
 </map>
