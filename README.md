@@ -107,6 +107,12 @@ FMUTIL is a modern object-oriented Fortran library that provides (as of now):
 
 FMUTIL is tested with Intel Fortran Compiler and MinGW-W64 gfortran (8.1.0) on Windows platofrm only. Doxyfile is provided for generating extensive API documentation using Doxygen. FMUTIL has no dependency on any other library. The CMakeLists file is provided along with additional CMake modules for compiler options and a Find module for finding and linking Intel MKL is also provided. These files can be used to auto generate Visual Studio projects or makefiles on Windows and Linux using CMake. A find module for FMUTIL is provided that generates CMake config files for easily linking FMUTIL using the find_package() command. The steps to link FMUTIL in cmake-based projects are:
 
++ Set the environment variable "MKLROOT" with the path to the Intel MKL installation directory. On typical Windows system, it looks something like
+"C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.0.117\windows\mkl"
+
++ Set the environment variable "IFORT_COMPILER20" with the path to the
+Fortran Compiler installation directory. On typical Windows system, it looks something like "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2020\windows\"
+
 + In cmake GUI or command-line, set FMUTIL_INSTALL_LIB_DIR to the desired directory, where the compiled library, modules, and cmake config files will be installed.
 
 + In cmake GUI or command-line, set FMUTIL_INSTALL_BIN_DIR to the desired directory, where the compiled test executables will be installed.
